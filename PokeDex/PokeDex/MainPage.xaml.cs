@@ -16,6 +16,16 @@ namespace PokeDex
         public MainPage()
         {
             InitializeComponent();
+            TestAPI("4");
+        }
+
+        public async void TestAPI(string poke)
+        {
+            Models.PokemonModel model = new Models.PokemonModel();
+            IMG_HERE.Source = await model.FindPokemonImageAsync(poke);
+            await model.FindPokemonAsync(poke);
+            DSRPT_HERE.Text = model._name;
+            
         }
     }
 }
