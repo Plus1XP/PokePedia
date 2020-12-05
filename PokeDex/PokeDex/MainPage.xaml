@@ -6,11 +6,10 @@
              mc:Ignorable="d"
              x:Class="PokeDex.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+    <StackLayout Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Start">
+        <Image x:Name="IMG_HERE"/>
+        <Label x:Name="DSRPT_HERE"/>
+
     </StackLayout>
 
 </ContentPage>
