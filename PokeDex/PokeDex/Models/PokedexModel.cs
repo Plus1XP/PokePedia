@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PokeDex.Models
 {
-    public class PkmModel
+    public class PokedexModel
     {
         public string Name { get; set; }
         public int ID { get; set; }
@@ -22,7 +22,7 @@ namespace PokeDex.Models
         public string Bio { get; set; }
         public string imageSource { get; set; }
 
-        public PkmModel()
+        public PokedexModel()
         {
 
         }
