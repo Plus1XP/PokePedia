@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:PokeDex.ViewModels"
+             mc:Ignorable="d"
+             x:Class="PokeDex.Views.MainPage">
+
+    <ContentPage.BindingContext>
+        <viewModels:MainPageViewModel/>
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Button Text="{Binding Header}" Command="{Binding Cmd}" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <ListView ItemsSource="{Binding pkmList}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                    <Label Text="{Binding ID}" VerticalOptions="Center" Padding="10,0,10,0"/>
+                                    <Image Source="{Binding imageSource}"/>
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                    <Label Text="{Binding Name}" VerticalTextAlignment="Center"/>
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="End" Padding="0,0,10,0">
+                                    <StackLayout Orientation="Vertical" WidthRequest="50">
+                                        <Label Text="{Binding Types[0]}" HorizontalTextAlignment="Start"/>
+                                        <Label Text="{Binding Types[1]}" HorizontalTextAlignment="Start"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" Padding="15,0,0,0" WidthRequest="100">
+                                        <Label Text="{Binding Abilities[0]}" HorizontalTextAlignment="Start"/>
+                                        <Label Text="{Binding Abilities[1]}" HorizontalTextAlignment="Start"/>
+                                    </StackLayout>
+                                </StackLayout>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>
