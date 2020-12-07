@@ -24,7 +24,7 @@
         </StackLayout>
 
         <StackLayout Orientation="Horizontal">
-            <ListView ItemsSource="{Binding pkmList}">
+            <ListView ItemsSource="{Binding pkmList}" SeparatorVisibility="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
