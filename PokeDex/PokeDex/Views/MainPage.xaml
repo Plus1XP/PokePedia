@@ -5,27 +5,34 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels="clr-namespace:PokeDex.ViewModels"
              mc:Ignorable="d"
-             x:Class="PokeDex.Views.MainPage">
+             x:Class="PokeDex.Views.MainPage"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true"
+             BackgroundColor="Red">
 
     <ContentPage.BindingContext>
         <viewModels:MainPageViewModel/>
     </ContentPage.BindingContext>
 
+    <ContentPage.Resources>
+        <viewModels:ImageSourceConverter x:Key="ImageSourceConverter"/>
+    </ContentPage.Resources>
+
     <StackLayout>
         <StackLayout Orientation="Horizontal">
-            <Button Text="{Binding Header}" Command="{Binding Cmd}" HorizontalOptions="FillAndExpand"/>
+            <Button Text="{Binding Header}" Command="{Binding Cmd}" HorizontalOptions="FillAndExpand" BackgroundColor="Red"/>
         </StackLayout>
 
         <StackLayout Orientation="Horizontal">
-            <ListView ItemsSource="{Binding pkmList}">
+            <ListView ItemsSource="{Binding pkmList}" SeparatorVisibility="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal">
 
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
-                                    <Label Text="{Binding ID}" VerticalOptions="Center" Padding="10,0,10,0"/>
-                                    <Image Source="{Binding imageSource}"/>
+                                    <Label Text="{Binding ID}" VerticalOptions="Center" Padding="10,0,5,0"/>
+                                    <Image Source="{Binding imageSource, Converter={StaticResource ImageSourceConverter}}"/>
                                 </StackLayout>
 
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
@@ -33,11 +40,11 @@
                                 </StackLayout>
 
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="End" Padding="0,0,10,0">
-                                    <StackLayout Orientation="Vertical" WidthRequest="50">
+                                    <StackLayout Orientation="Vertical" WidthRequest="60">
                                         <Label Text="{Binding Types[0]}" HorizontalTextAlignment="Start"/>
                                         <Label Text="{Binding Types[1]}" HorizontalTextAlignment="Start"/>
                                     </StackLayout>
-                                    <StackLayout Orientation="Vertical" Padding="15,0,0,0" WidthRequest="100">
+                                    <StackLayout Orientation="Vertical" Padding="15,0,0,0" WidthRequest="120">
                                         <Label Text="{Binding Abilities[0]}" HorizontalTextAlignment="Start"/>
                                         <Label Text="{Binding Abilities[1]}" HorizontalTextAlignment="Start"/>
                                     </StackLayout>
