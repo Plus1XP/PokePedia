@@ -7,8 +7,11 @@
              mc:Ignorable="d"
              x:Class="PokeDex.Views.MainPage"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-             ios:Page.UseSafeArea="true"
-             BackgroundColor="Red">
+             ios:Page.UseSafeArea="true">
+
+    <ContentPage.BackgroundColor>
+        <OnPlatform x:TypeArguments="Color" iOS="Red"/>
+    </ContentPage.BackgroundColor>
 
     <ContentPage.BindingContext>
         <viewModels:MainPageViewModel/>
