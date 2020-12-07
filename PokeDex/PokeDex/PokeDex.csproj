@@ -3,10 +3,12 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
-    <Version>0.1.0-alpha.1</Version>
+    <Version>0.1.1</Version>
     <Company>https://github.com/aleuts</Company>
-    <FileVersion>0.0.1.0</FileVersion>
+    <FileVersion>0.1.1.0</FileVersion>
     <Description>An interactive Pokedex for Mobile Devices</Description>
+    <Authors>aleuts</Authors>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
