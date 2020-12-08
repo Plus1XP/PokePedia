@@ -27,7 +27,7 @@
         </StackLayout>
 
         <StackLayout Orientation="Horizontal">
-            <ListView ItemsSource="{Binding pkmList}" SeparatorVisibility="None">
+            <ListView ItemsSource="{Binding pkmList}" SeparatorVisibility="None" SelectedItem="{Binding SelectedPokemon, Mode=TwoWay}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
