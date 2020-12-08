@@ -45,6 +45,19 @@ namespace PokeDex.ViewModels
 
         public string Header { get; set; } = "Search";
 
+        private PokedexModel selectedPokemon;
+
+        public PokedexModel SelectedPokemon
+        {
+            get { return selectedPokemon; }
+            set 
+            { 
+                selectedPokemon = value;
+                OnPropertChanged("SelectedPokemon");
+            }
+        }
+
+
         public string Width
         {
             get { return width; }
