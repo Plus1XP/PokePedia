@@ -4,10 +4,11 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels="clr-namespace:PokeDex.ViewModels"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              mc:Ignorable="d"
              x:Class="PokeDex.Views.MainPage"
-             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-             ios:Page.UseSafeArea="true">
+             ios:Page.UseSafeArea="True"
+             NavigationPage.HasNavigationBar="False">
 
     <ContentPage.BackgroundColor>
         <OnPlatform x:TypeArguments="Color" iOS="Red"/>
@@ -19,15 +20,19 @@
 
     <ContentPage.Resources>
         <viewModels:ImageSourceConverter x:Key="ImageSourceConverter"/>
+        <!--<viewModels:ListViewBehaviour x:key="ItemTappedConverter"/>-->
     </ContentPage.Resources>
 
     <StackLayout>
         <StackLayout Orientation="Horizontal">
-            <Button Text="{Binding Header}" Command="{Binding Cmd}" HorizontalOptions="FillAndExpand" BackgroundColor="Red"/>
+            <Button Text="{Binding Header}" Command="{Binding OnSearch}" HorizontalOptions="FillAndExpand" BackgroundColor="Red"/>
         </StackLayout>
 
         <StackLayout Orientation="Horizontal">
-            <ListView ItemsSource="{Binding pkmList}" SeparatorVisibility="None" SelectedItem="{Binding SelectedPokemon, Mode=TwoWay}">
+            <ListView x:Name="L1" ItemsSource="{Binding pkmList}" SeparatorVisibility="None"> <!--SelectedItem="{Binding SelectedPokemon, Mode=TwoWay}">--> <!--viewModels:ItemTappedAttached.Command="{Binding IsTapped}">-->
+                <ListView.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="2" Command="{Binding IsTapped}" CommandParameter="{Binding Source={x:Reference L1}, Path=SelectedItem}"/>
+                </ListView.GestureRecognizers>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -57,6 +62,9 @@
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
+                <!--<ListView.Behaviors>
+                    <viewModels:ItemTappedBehavior EventName="ItemTapped" Command="{Binding IsTapped}"/>
+                </ListView.Behaviors>-->
             </ListView>
         </StackLayout>
 
