@@ -20,7 +20,6 @@
 
     <ContentPage.Resources>
         <viewModels:ImageSourceConverter x:Key="ImageSourceConverter"/>
-        <!--<viewModels:ListViewBehaviour x:key="ItemTappedConverter"/>-->
     </ContentPage.Resources>
 
     <StackLayout>
@@ -29,10 +28,14 @@
         </StackLayout>
 
         <StackLayout Orientation="Horizontal">
-            <ListView x:Name="L1" ItemsSource="{Binding pkmList}" SeparatorVisibility="None"> <!--SelectedItem="{Binding SelectedPokemon, Mode=TwoWay}">--> <!--viewModels:ItemTappedAttached.Command="{Binding IsTapped}">-->
-                <ListView.GestureRecognizers>
+            <ListView x:Name="L1" ItemsSource="{Binding pkmList}" SelectedItem="{Binding SelectedPokemon, Mode=TwoWay}" SeparatorVisibility="None"> <!--viewModels:ItemTappedAttached.Command="{Binding IsTapped}">-->
+                <!--<ListView.GestureRecognizers>
                     <TapGestureRecognizer NumberOfTapsRequired="2" Command="{Binding IsTapped}" CommandParameter="{Binding Source={x:Reference L1}, Path=SelectedItem}"/>
-                </ListView.GestureRecognizers>
+                </ListView.GestureRecognizers>-->
+                <ListView.Behaviors>
+                    <!--<viewModels:ItemTappedBehaviour Command="{Binding IsTapped}"/>-->
+                    <viewModels:ItemSelectedBehaviour Command="{Binding IsTapped}"/>
+                </ListView.Behaviors>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -62,9 +65,6 @@
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-                <!--<ListView.Behaviors>
-                    <viewModels:ItemTappedBehavior EventName="ItemTapped" Command="{Binding IsTapped}"/>
-                </ListView.Behaviors>-->
             </ListView>
         </StackLayout>
 
