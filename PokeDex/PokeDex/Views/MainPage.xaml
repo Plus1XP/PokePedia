@@ -28,19 +28,14 @@
         </StackLayout>
 
         <StackLayout Orientation="Horizontal">
-            <ListView x:Name="L1" ItemsSource="{Binding pkmList}" SelectedItem="{Binding SelectedPokemon, Mode=TwoWay}" SeparatorVisibility="None"> <!--viewModels:ItemTappedAttached.Command="{Binding IsTapped}">-->
-                <!--<ListView.GestureRecognizers>
-                    <TapGestureRecognizer NumberOfTapsRequired="2" Command="{Binding IsTapped}" CommandParameter="{Binding Source={x:Reference L1}, Path=SelectedItem}"/>
-                </ListView.GestureRecognizers>-->
+            <ListView x:Name="L1" ItemsSource="{Binding pkmList}" SeparatorVisibility="None">
                 <ListView.Behaviors>
-                    <!--<viewModels:ItemTappedBehaviour Command="{Binding IsTapped}"/>-->
-                    <viewModels:ItemSelectedBehaviour Command="{Binding IsTapped}"/>
+                    <viewModels:ItemTappedBehaviour Command="{Binding IsTapped}" CommandParameter="{Binding Source={x:Reference L1}, Path=SelectedItem}"/>
                 </ListView.Behaviors>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal">
-
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
                                     <Label Text="{Binding ID}" VerticalOptions="Center" Padding="10,0,5,0"/>
                                     <Image Source="{Binding imageSource, Converter={StaticResource ImageSourceConverter}}"/>
