@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:PokeDex.ViewModels"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:chartForms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             x:Class="PokeDex.Views.DetailsPage"
+             ios:Page.UseSafeArea="True"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.BindingContext>
+        <viewModels:DetailsPageViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <viewModels:ImageSourceConverter x:Key="ImageSourceConverter"/>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.GestureRecognizers>
+                    <SwipeGestureRecognizer Direction="Right" Command="{Binding CloseDetail}"/>
+                </Grid.GestureRecognizers>
+                <!--<Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" Text="Close" Command="{Binding CloseDetail}"/>-->
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" Text="{Binding Name}" FontSize="Title" FontAttributes="Bold"/>
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="End" Margin="0,0,20,0" Text="{Binding ID}" FontSize="Title" FontAttributes="Bold"/>
+                <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" Margin="50,0,50,0" Text="{Binding Genus}" FontSize="Caption"/>
+                <Image Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center" Source="{Binding HighImage, Converter={StaticResource ImageSourceConverter}}"/>
+                <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" Text="{Binding Bio}"/>
+                <!--<Label Grid.Row="4" Grid.Column="0" Rotation="-90" Text="Type"/>-->
+                <StackLayout Grid.Row="4" Grid.Column="0" HorizontalOptions="Center" Margin="0,20,0,0" Orientation="Horizontal">
+                    <Label Rotation="-90" Text="TYPE" FontAttributes="Bold" FontSize="Large"/>
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="{Binding Types[0]}"/>
+                        <Label Text="{Binding Types[1]}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <Grid Grid.Row="4" Grid.Column="1">
+                    <Label Text="ABILITIES" FontAttributes="Bold" FontSize="Large" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Opacity="0.15" TextColor="Gray"/>
+                    <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Orientation="Vertical">
+                        <Label Text="{Binding Abilities[0]}" HorizontalOptions="Center" FontAttributes="Bold"/>
+                        <Label Text="{Binding Abilities[1]}" HorizontalOptions="Center" FontAttributes="Bold"/>
+                    </StackLayout>
+                </Grid>
+
+                <chartForms:ChartView Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" HeightRequest="300" Chart="{Binding StatsChart}"/>
+                
+                <StackLayout Grid.Row="6" Grid.Column="0" HorizontalOptions="Center"  Orientation="Vertical">
+                    <Label Text="EGG GROUP" FontAttributes="Bold" FontSize="Large"/>
+                    <Label Text="{Binding EggGroups[0]}" HorizontalOptions="Center"/>
+                    <Label Text="{Binding EggGroups[1]}" HorizontalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Grid.Row="6" Grid.Column="1" HorizontalOptions="Center"  Orientation="Vertical">
+                    <Label Text="{Binding Shape}"/>
+                    <Label Text="{Binding GrowthRate}"/>
+                </StackLayout>
+                <Label Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center"  Margin="0,20,0,0" Text="{Binding Generation}" FontAttributes="Italic"/>
+                <Label Grid.Row="8" Grid.Column="0" HorizontalOptions="CenterAndExpand" Text="{Binding Habitat}"/>
+                <Label Grid.Row="8" Grid.Column="1" HorizontalOptions="CenterAndExpand" Text="{Binding CaptureRate}"/>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
