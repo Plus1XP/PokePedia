@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 using PokeDex.Models;
@@ -17,36 +18,30 @@ namespace PokeDex.ViewModels
     {
         private PokedexManagerModel pkmManager;
 
-        private PokedexModel selectedPokemon;
-
         public MainPageViewModel()
         {
             pkmManager = new PokedexManagerModel();
             pkmList = new ObservableCollection<PokedexModel>();
 
             OnSearch = new AsyncRelayCommand(() => pkmManager.PopulatePokemonList(pkmList, 3));
+            //OnSearch = new AsyncRelayCommand(() => pkmManager.PopulatePokemonListWithSpecies(pkmList, 3));
             //IsTapped = new AsyncRelayCommand(ItemTapped);
             IsTapped = new Command<PokedexModel>(async p => await ItemTapped(p));
         }
 
+        //public AsyncRelayCommand load { get; private set; }
+
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public AsyncRelayCommand OnSearch { get; private set; }
+
+        //public AsyncRelayCommand IsTapped { get; private set; }
         public Command<PokedexModel> IsTapped { get; private set; }
 
         public ObservableCollection<PokedexModel> pkmList { get; private set; }
 
         public string Header { get; private set; } = "Search";
-
-        public PokedexModel SelectedPokemon
-        {
-            get => selectedPokemon;
-            set
-            {
-                selectedPokemon = value;
-                OnPropertChanged("SelectedPokemon");
-            }
-        }   
 
         private void OnPropertChanged(string property)
         {
@@ -59,7 +54,7 @@ namespace PokeDex.ViewModels
         private async Task ItemTapped(PokedexModel pkm)
         {
             await Application.Current.MainPage.Navigation.PushAsync(new DetailsPage());
-            MessagingCenter.Send<MainPageViewModel, PokedexModel>(this,"Pokemon Details",pkm);
+            MessagingCenter.Send<MainPageViewModel, PokedexModel>(this, "Send_Selected_Pokemon", pkm);
         }
     }
 }

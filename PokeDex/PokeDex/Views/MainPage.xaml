@@ -26,7 +26,7 @@
         <StackLayout Orientation="Horizontal">
             <Button Text="{Binding Header}" Command="{Binding OnSearch}" HorizontalOptions="FillAndExpand" BackgroundColor="Red"/>
         </StackLayout>
-
+        
         <StackLayout Orientation="Horizontal">
             <ListView x:Name="L1" ItemsSource="{Binding pkmList}" SeparatorVisibility="None">
                 <ListView.Behaviors>
@@ -38,7 +38,7 @@
                             <StackLayout Orientation="Horizontal">
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
                                     <Label Text="{Binding ID}" VerticalOptions="Center" Padding="10,0,5,0"/>
-                                    <Image Source="{Binding imageSource, Converter={StaticResource ImageSourceConverter}}"/>
+                                    <Image Source="{Binding LowResImageSource, Converter={StaticResource ImageSourceConverter}}"/>
                                 </StackLayout>
 
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
