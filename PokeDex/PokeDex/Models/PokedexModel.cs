@@ -19,13 +19,22 @@ namespace PokeDex.Models
         public int SpecialAttack { get; set; }
         public int SpecialDefence { get; set; }
         public int Speed { get; set; }
+        public string LowResImageSource { get; set; }
+        public string HighResImageSource { get; set; }
+
+        public Species species { get; set; } = new Species();
+    }
+
+    public class Species
+    {
+        public int CaptureRate { get; set; }
+        public string Colour { get; set; }
+        public List<string> EggGroups { get; set; }
         public string Bio { get; set; }
-        public string imageSource { get; set; }
-
-        public PokedexModel()
-        {
-
-        }
-
+        public string Genus { get; set; }
+        public string Generation { get; set; }
+        public string GrowthRate { get; set; }
+        public string Habitat { get; set; }
+        public string Shape { get; set; }
     }
 }
