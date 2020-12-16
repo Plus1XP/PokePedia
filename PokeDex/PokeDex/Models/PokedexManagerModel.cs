@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 using PokeApiNet;
@@ -14,9 +16,12 @@ namespace PokeDex.Models
         PokeApiClient pokeApi;
         PokedexModel pkm;
 
+        HttpClient client;
+
         public PokedexManagerModel()
         {
             pokeApi = new PokeApiClient();
+            client = new HttpClient();
         }
 
         public async Task PopulatePokemonList(ObservableCollection<PokedexModel> pkmList, int maxPkm)
@@ -30,7 +35,7 @@ namespace PokeDex.Models
             }
         }
 
-        public async Task<List<PokedexModel>> PopulatePokemonList(int maxPkm)
+        public async Task<List<PokedexModel>> GetPokemonList(int maxPkm)
         {
             List<PokedexModel> pkmList = new List<PokedexModel>();
 
@@ -41,6 +46,44 @@ namespace PokeDex.Models
 
             return pkmList;
         }
+
+        public async Task UpdatePokemonSpeciesList(ObservableCollection<PokedexModel> pkmList)
+        {
+            foreach (PokedexModel pkm in pkmList)
+            {
+                await GetSpeciesInfo(pkm, pkm.ID.ToString());
+            }
+        }
+
+        public async Task<ObservableCollection<PokedexModel>> GetPokemonSpeciesList(ObservableCollection<PokedexModel> pkmList)
+        {
+            foreach (PokedexModel pkm in pkmList)
+            {
+                await GetSpeciesInfo(pkm, pkm.ID.ToString());
+            }
+
+            return pkmList;
+        }
+
+        //TEST
+
+        public async Task PopulatePokemonListWithSpecies(ObservableCollection<PokedexModel> pkmList, int maxPkm)
+        {
+            pkmList.Clear();
+
+            for (int i = 1; i <= maxPkm; i++)
+            {
+                pkmList.Add(await GetSinglePokemonSpecies(await CreatePkm($"{i}")));
+            }
+        }
+
+
+        public async Task<PokedexModel> GetSinglePokemonSpecies(PokedexModel pkm)
+        {
+            return await GetSpeciesInfo(pkm, pkm.ID.ToString());
+        }
+
+        //TEST
 
         public async Task<PokedexModel> CreatePkm(string pkmID)
         {
@@ -67,8 +110,35 @@ namespace PokeDex.Models
                 pkm.SpecialAttack = pokemon.Stats[3].BaseStat;
                 pkm.SpecialDefence = pokemon.Stats[4].BaseStat;
                 pkm.Speed = pokemon.Stats[5].BaseStat;
-                pkm.Bio = "Blank!";
-                pkm.imageSource = pokemon.Sprites.FrontDefault;
+                pkm.LowResImageSource = pokemon.Sprites.FrontDefault;
+                pkm.HighResImageSource = GetHighResImage(pokemon.Id);
+
+                await GetSpeciesInfo(pkm, pkmID);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception($"!! ERROR !! \n{ex.Message} \n{ex.InnerException} \n{ex.StackTrace} \n{ex.Source}");
+            }
+
+            return pkm;
+        }
+
+        public async Task<PokedexModel> GetSpeciesInfo(PokedexModel pkm, string pkmID)
+        {
+            try
+            {
+                PokemonSpecies species = await pokeApi.GetResourceAsync<PokemonSpecies>(pkmID);
+                //pkm.species = new Species();
+                pkm.species.Bio = Regex.Replace(species.FlavorTextEntries[0].FlavorText, @"\n+", " ");
+                pkm.species.CaptureRate = species.CaptureRate;
+                pkm.species.Colour = species.Color.Name;
+                pkm.species.EggGroups = GetEggGroups(pkm.species.EggGroups, species);
+                pkm.species.Generation = species.Generation.Name;
+                pkm.species.Genus = species.Genera[7].Genus;
+                pkm.species.GrowthRate = species.GrowthRate.Name;
+                pkm.species.Habitat = species.Habitat.Name;
+                pkm.species.Shape = species.Shape.Name;
             }
             catch (Exception ex)
             {
@@ -101,6 +171,23 @@ namespace PokeDex.Models
             }
 
             return list;
+        }
+
+        public List<string> GetEggGroups(List<string> list, PokemonSpecies species)
+        {
+            list = new List<string>();
+
+            for (int i = 0; i < species.EggGroups.Count; i++)
+            {
+                list.Add(species.EggGroups[i].Name);
+            }
+
+            return list;
+        }
+
+        public string GetHighResImage(int pokeID)
+        {
+            return "https://pokeres.bastionbot.org/images/pokemon/" + pokeID + ".png";
         }
 
         public int SetNameWidth(ObservableCollection<PokedexModel> pkmList)

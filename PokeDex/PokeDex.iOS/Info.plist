@@ -24,7 +24,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>PokeDex</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.aleuts.Handy505</string>
+	<string>com.aleuts.Handy505.PokeDex</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>UILaunchStoryboardName</key>

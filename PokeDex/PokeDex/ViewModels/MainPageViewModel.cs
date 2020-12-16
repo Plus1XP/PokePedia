@@ -4,82 +4,44 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 using PokeDex.Models;
+using PokeDex.Views;
+
+using Xamarin.Forms;
 
 namespace PokeDex.ViewModels
 {
     class MainPageViewModel : INotifyPropertyChanged
     {
-        PokedexManagerModel pkmManager;
-
-        private string width;
-
-        //private ObservableCollection<PokedexModel> _pkmList;
+        private PokedexManagerModel pkmManager;
 
         public MainPageViewModel()
         {
-            Width = "105";
-
             pkmManager = new PokedexManagerModel();
             pkmList = new ObservableCollection<PokedexModel>();
 
-            Cmd = new AsyncRelayCommand(() => pkmManager.PopulatePokemonList(pkmList, 151));
+            OnSearch = new AsyncRelayCommand(() => pkmManager.PopulatePokemonList(pkmList, 3));
+            //OnSearch = new AsyncRelayCommand(() => pkmManager.PopulatePokemonListWithSpecies(pkmList, 3));
+            //IsTapped = new AsyncRelayCommand(ItemTapped);
+            IsTapped = new Command<PokedexModel>(async p => await ItemTapped(p));
         }
 
-        public ObservableCollection<PokedexModel> pkmList { get; set; }
+        //public AsyncRelayCommand load { get; private set; }
 
-        //public ObservableCollection<PokedexModel> pkmList 
-        //{ 
-        //    get 
-        //    { 
-        //        return _pkmList; 
-        //    } 
-        //    set 
-        //    { 
-        //        _pkmList = value; 
-        //        OnPropertChanged("pkmList"); 
-        //    } 
-        //}
-
-        public string Header { get; set; } = "Search";
-
-        public string Width
-        {
-            get { return width; }
-            set
-            {
-                width = value;
-                OnPropertChanged("Width");
-            }
-        }
-
-        public AsyncRelayCommand Cmd { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public async Task PopulatePokemonList(int maxPkm)
-        {
-            for (int i = 1; i <= maxPkm; i++)
-            {
+        public AsyncRelayCommand OnSearch { get; private set; }
 
-                pkmList.Add(await pkmManager.CreatePkm($"{i}"));
-            }
-        }
+        //public AsyncRelayCommand IsTapped { get; private set; }
+        public Command<PokedexModel> IsTapped { get; private set; }
 
-        public async Task GetPokemonList(int maxPkm)
-        {
-            pkmList = new ObservableCollection<PokedexModel>(await pkmManager.PopulatePokemonList(maxPkm));
-        }
+        public ObservableCollection<PokedexModel> pkmList { get; private set; }
 
-        public async Task UpdatePokemonList(int maxPkm)
-        {
-            foreach (var pkm in await pkmManager.PopulatePokemonList(maxPkm))
-            {
-                pkmList.Add(pkm);
-            }
-        }
+        public string Header { get; private set; } = "Search";
 
         private void OnPropertChanged(string property)
         {
@@ -87,6 +49,12 @@ namespace PokeDex.ViewModels
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(property));
             }
+        }
+
+        private async Task ItemTapped(PokedexModel pkm)
+        {
+            await Application.Current.MainPage.Navigation.PushAsync(new DetailsPage());
+            MessagingCenter.Send<MainPageViewModel, PokedexModel>(this, "Send_Selected_Pokemon", pkm);
         }
     }
 }
