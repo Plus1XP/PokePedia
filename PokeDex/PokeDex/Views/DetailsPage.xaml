@@ -55,8 +55,8 @@
                 
                 <StackLayout Grid.Row="4" Grid.Column="0" HorizontalOptions="Start" Margin="20,0,0,0" Orientation="Vertical">
                     <Label Text="TYPE" FontAttributes="Bold" FontSize="Large"/>
-                    <Label Text="{Binding Types[0]}" HorizontalOptions="Start" HorizontalTextAlignment="Center"/>
-                    <Label Text="{Binding Types[1]}" HorizontalOptions="Start" HorizontalTextAlignment="Center"/>
+                    <Label Text="{Binding Types[0]}" HorizontalOptions="Start" HorizontalTextAlignment="Center" BackgroundColor="{Binding TypeColour1}" WidthRequest="100"/>
+                    <Label Text="{Binding Types[1]}" HorizontalOptions="Start" HorizontalTextAlignment="Center" BackgroundColor="{Binding TypeColour2}" WidthRequest="100"/>
                 </StackLayout>
 
                 <StackLayout Grid.Row="4" Grid.Column="1" HorizontalOptions="End" Margin="0,0,20,0" Orientation="Vertical">

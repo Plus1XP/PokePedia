@@ -11,16 +11,18 @@ using SkiaSharp;
 using PokeDex.Models;
 
 using Xamarin.Forms;
+using PokeDex.Views;
 
 namespace PokeDex.ViewModels
 {
     class DetailsPageViewModel : INotifyPropertyChanged
     {
-        private readonly string Red = "#FF0000";
-        private readonly string Green = "#008000";
+        PokemonCharts chart;
+        ElementalColours pkmColour;
 
-        public DetailsPageViewModel()
+        public DetailsPageViewModel()       // Add Height & Weight
         {
+            pkmColour = new ElementalColours();
             MessagingCenter.Subscribe<MainPageViewModel, PokedexModel>(this, "Send_Selected_Pokemon", (sender, args) => { UpdatePokemonDetails(args); });
             CloseDetail = new Command(async () => await OnDetailsClosed());
         }
@@ -28,6 +30,10 @@ namespace PokeDex.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
 
         public Command CloseDetail { get; set; }
+
+        public string TypeColour1 { get; private set; }
+
+        public string TypeColour2 { get; private set; }
 
         public string Name { get; private set; } = "";
 
@@ -77,46 +83,6 @@ namespace PokeDex.ViewModels
 
         public Chart StatsChart { get; set; }
 
-        public List<Microcharts.ChartEntry> stats => new List<Microcharts.ChartEntry>
-        {
-            new Microcharts.ChartEntry((float)HP)
-            {
-                Label = "HP",
-                ValueLabel = HP.ToString(),
-                Color=SKColor.Parse(Green)
-            },
-            new Microcharts.ChartEntry((float)Attack)
-            {
-                Label = "Attack",
-                ValueLabel = Attack.ToString(),
-                Color=SKColor.Parse(Green)
-            },
-            new Microcharts.ChartEntry((float)Defence)
-            {
-                Label = "Defense",
-                ValueLabel = Defence.ToString(),
-                Color=SKColor.Parse(Green)
-            },
-            new Microcharts.ChartEntry((float)SpecialAttack)
-            {
-                Label = "S/Attack",
-                ValueLabel = SpecialAttack.ToString(),
-                Color=SKColor.Parse(Red)
-            },
-            new Microcharts.ChartEntry((float)SpecialDefence)
-            {
-                Label = "S/Defence",
-                ValueLabel = SpecialDefence.ToString(),
-                Color=SKColor.Parse(Red)
-            },
-            new Microcharts.ChartEntry((float)Speed)
-            {
-                Label = "Speed",
-                ValueLabel = Speed.ToString(),
-                Color=SKColor.Parse(Red)
-            },
-        };
-
         private void OnPropertChanged(string property)
         {
             if (PropertyChanged != null)
@@ -151,16 +117,53 @@ namespace PokeDex.ViewModels
             Generation = pkm.species.Generation;
             HighImage = pkm.HighResImageSource;
 
-            StatsChart = new RadarChart { Entries = stats, LabelTextSize=30 };
+            SetTypeColour();
+
+            CreatePokemonCharts();
 
             OnPropertChanged(null);
 
             MessagingCenter.Unsubscribe<MainPageViewModel>(this, "Send_Selected_Pokemon");
         }
 
+        private void CreatePokemonCharts()
+        {
+            chart = new PokemonCharts();
+
+            chart.chartEntries = new List<Microcharts.ChartEntry>
+            {
+                chart.AddChartEntries("HP", HP, pkmColour.GetElementalColour(Types).Item1),
+                chart.AddChartEntries("Attack", Attack, pkmColour.GetElementalColour(Types).Item1),
+                chart.AddChartEntries("Defence", Defence, pkmColour.GetElementalColour(Types).Item1),
+                chart.AddChartEntries("S/Attack", SpecialAttack, pkmColour.GetElementalColour(Types).Item2),
+                chart.AddChartEntries("S/Defence", SpecialDefence, pkmColour.GetElementalColour(Types).Item2),
+                chart.AddChartEntries("Speed", Speed, pkmColour.GetElementalColour(Types).Item2)
+            };
+
+            StatsChart = new RadarChart { Entries = chart.GetChartEntries(), LabelTextSize = 30 };
+        }
+
+        private void SetTypeColour()
+        {
+            TypeColour1 = pkmColour.GetElementalBackgroundColour(Types).Item1;
+            TypeColour2 = pkmColour.GetElementalBackgroundColour(Types).Item2;
+        }
+
         private async Task OnDetailsClosed()
         {
             await Application.Current.MainPage.Navigation.PopAsync();
+        }
+
+        private async Task OnSwipeRight()
+        {
+            await Application.Current.MainPage.Navigation.PushAsync(new DetailsPage());
+            //MessagingCenter.Send<MainPageViewModel, PokedexModel>(this, "Send_Selected_Pokemon", pkm);
+        }
+
+        private async Task OnSwipeLeft()
+        {
+            await Application.Current.MainPage.Navigation.PushAsync(new DetailsPage());
+            //MessagingCenter.Send<MainPageViewModel, PokedexModel>(this, "Send_Selected_Pokemon", pkm);
         }
     }
 }
