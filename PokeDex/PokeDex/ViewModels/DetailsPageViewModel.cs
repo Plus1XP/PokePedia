@@ -20,7 +20,7 @@ namespace PokeDex.ViewModels
         PokemonCharts chart;
         ElementalColours pkmColour;
 
-        public DetailsPageViewModel()       // Add Height & Weight
+        public DetailsPageViewModel()
         {
             pkmColour = new ElementalColours();
             MessagingCenter.Subscribe<MainPageViewModel, PokedexModel>(this, "Send_Selected_Pokemon", (sender, args) => { UpdatePokemonDetails(args); });
@@ -34,6 +34,12 @@ namespace PokeDex.ViewModels
         public string TypeColour1 { get; private set; }
 
         public string TypeColour2 { get; private set; }
+
+        public string Type { get; private set; }
+
+        public string Ability { get; private set; }
+
+        public string Group { get; private set; }
 
         public string Name { get; private set; } = "";
 
@@ -93,6 +99,19 @@ namespace PokeDex.ViewModels
 
         private void UpdatePokemonDetails(PokedexModel pkm)
         {
+            SetPokemonValues(pkm);
+
+            SetTypeColour();
+
+            CreatePokemonCharts();
+
+            OnPropertChanged(null);
+
+            MessagingCenter.Unsubscribe<MainPageViewModel>(this, "Send_Selected_Pokemon");
+        }
+
+        private void SetPokemonValues(PokedexModel pkm)
+        {
             Name = pkm.Name;
             ID = pkm.ID;
             Types = pkm.Types;
@@ -117,13 +136,9 @@ namespace PokeDex.ViewModels
             Generation = pkm.species.Generation;
             HighImage = pkm.HighResImageSource;
 
-            SetTypeColour();
-
-            CreatePokemonCharts();
-
-            OnPropertChanged(null);
-
-            MessagingCenter.Unsubscribe<MainPageViewModel>(this, "Send_Selected_Pokemon");
+            Type = "TYPE";
+            Ability = "ABILITY";
+            Group = $"*This Pokémon belongs to the following Egg Group:\n{EggGroups[0]} {EggGroups[1]}";
         }
 
         private void CreatePokemonCharts()
