@@ -138,7 +138,19 @@ namespace PokeDex.ViewModels
 
             Type = "TYPE";
             Ability = "ABILITY";
-            Group = $"*This Pokémon belongs to the following Egg Group:\n{EggGroups[0]} {EggGroups[1]}";
+            Group = $"*This Pokémon belongs to the following Egg Group:\n{GetEggGroups(EggGroups).Item1} {GetEggGroups(EggGroups).Item2}";
+        }
+
+        private Tuple<string, string> GetEggGroups(List<string> eggGroup)
+        {
+            if (eggGroup.Count == 1)
+            {
+                return Tuple.Create(eggGroup[0], "");
+            }
+            else
+            {
+                return Tuple.Create(eggGroup[0], eggGroup[1]);
+            }
         }
 
         private void CreatePokemonCharts()
