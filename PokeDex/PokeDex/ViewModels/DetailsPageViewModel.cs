@@ -31,61 +31,72 @@ namespace PokeDex.ViewModels
 
         public Command CloseDetail { get; set; }
 
-        public string TypeColour1 { get; private set; }
+        public string TypeColour1_BackgroundColour { get; private set; }
 
-        public string TypeColour2 { get; private set; }
+        public string TypeColour2_BackgroundColour { get; private set; }
 
-        public string Type { get; private set; }
+        public string Type_Header { get; private set; }
 
-        public string Ability { get; private set; }
+        public string Ability_Header { get; private set; }
 
-        public string Group { get; private set; }
+        public string Height_Header { get; private set; }
 
-        public string Name { get; private set; } = "";
+        public string Weight_Header { get; private set; }
 
-        public int? ID { get; private set; } = null;
+        public string Shape_Header { get; private set; }
 
-        public List<string> Types { get; private set; } = null;
+        public string Habitat_Header { get; private set; }
 
-        public string Weight { get; private set; } = "";
+        public string CaptureR_Header { get; private set; }
 
+        public string GrowthR_Header { get; private set; }
 
-        public string Height { get; private set; } = "";
+        public string Name { get; private set; }
 
-        public List<string> Abilities { get; private set; } = null;
-        public int? BaseXP { get; private set; } = null;
+        public int? ID { get; private set; }
 
-        public int? HP { get; private set; } = null;
+        public List<string> Types { get; private set; }
 
-        public int? Attack { get; private set; } = null;
+        public string Weight { get; private set; }
 
-        public int? Defence { get; private set; } = null;
+        public string Height { get; private set; }
 
-        public int? SpecialAttack { get; private set; } = null;
+        public List<string> Abilities { get; private set; }
+        public int? BaseXP { get; private set; }
 
-        public int? SpecialDefence { get; private set; } = null;
+        public int? HP { get; private set; }
+
+        public int? Attack { get; private set; }
+
+        public int? Defence { get; private set; }
+
+        public int? SpecialAttack { get; private set; }
+
+        public int? SpecialDefence { get; private set; }
 
         public int? Speed { get; private set; } = null;
 
-        public string Genus { get; private set; } = "";
+        public string Genus { get; private set; }
 
-        public string Bio { get; private set; } = "";
+        public string Bio { get; private set; }
 
-        public List<string> EggGroups { get; private set; } = null;
+        public List<string> EggGroups { get; private set; }
 
-        public string Shape { get; private set; } = "";
+        public string Shape { get; private set; }
 
-        public string Colour { get; private set; } = "";
+        public string Colour { get; private set; }
 
-        public string Habitat { get; private set; } = "";
+        public string Habitat { get; private set; }
 
-        public string GrowthRate { get; private set; } = "";
+        public string GrowthRate { get; private set; }
 
-        public int? CaptureRate { get; private set; } = null;
+        public int? CaptureRate { get; private set; }
 
-        public string Generation { get; private set; } = "";
+        public string Generation { get; private set; }
 
-        public string HighImage { get; private set; } = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png";
+        public string EggGroup { get; private set; }
+
+        public string HighImage { get; private set; }
 
         public Chart StatsChart { get; set; }
 
@@ -99,6 +110,8 @@ namespace PokeDex.ViewModels
 
         private void UpdatePokemonDetails(PokedexModel pkm)
         {
+            SetHeaders();
+
             SetPokemonValues(pkm);
 
             SetTypeColour();
@@ -108,6 +121,18 @@ namespace PokeDex.ViewModels
             OnPropertChanged(null);
 
             MessagingCenter.Unsubscribe<MainPageViewModel>(this, "Send_Selected_Pokemon");
+        }
+
+        private void SetHeaders()
+        {
+            Type_Header = "TYPE";
+            Ability_Header = "ABILITY";
+            Height_Header = "Height";
+            Weight_Header = "Weight";
+            Shape_Header = "Shape";
+            Habitat_Header = "Habitat";
+            CaptureR_Header = "Capture Rate";
+            GrowthR_Header = "Growth Rate";
         }
 
         private void SetPokemonValues(PokedexModel pkm)
@@ -136,9 +161,7 @@ namespace PokeDex.ViewModels
             Generation = pkm.species.Generation;
             HighImage = pkm.HighResImageSource;
 
-            Type = "TYPE";
-            Ability = "ABILITY";
-            Group = $"*This Pokémon belongs to the following Egg Group:\n{GetEggGroups(EggGroups).Item1} {GetEggGroups(EggGroups).Item2}";
+            EggGroup = $"*This Pokémon belongs to the following Egg Group:\n{GetEggGroups(EggGroups).Item1} {GetEggGroups(EggGroups).Item2}";
         }
 
         private void CreatePokemonCharts()
@@ -160,8 +183,8 @@ namespace PokeDex.ViewModels
 
         private void SetTypeColour()
         {
-            TypeColour1 = pkmColour.GetElementalBackgroundColour(Types).Item1;
-            TypeColour2 = pkmColour.GetElementalBackgroundColour(Types).Item2;
+            TypeColour1_BackgroundColour = pkmColour.GetElementalBackgroundColour(Types).Item1;
+            TypeColour2_BackgroundColour = pkmColour.GetElementalBackgroundColour(Types).Item2;
         }
 
         private Tuple<string, string> GetEggGroups(List<string> eggGroup)
