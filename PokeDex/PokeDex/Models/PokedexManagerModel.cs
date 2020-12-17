@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 
 using PokeApiNet;
 
+using Xamarin.Forms;
+
 namespace PokeDex.Models
 {
     public class PokedexManagerModel
@@ -106,8 +108,9 @@ namespace PokeDex.Models
                 pkm.SpecialAttack = pokemon.Stats[3].BaseStat;
                 pkm.SpecialDefence = pokemon.Stats[4].BaseStat;
                 pkm.Speed = pokemon.Stats[5].BaseStat;
-                pkm.LowResImageSource = pokemon.Sprites.FrontDefault;
-                pkm.HighResImageSource = GetHighResImage(pokemon.Id);
+                //pkm.LowResImageSource = pokemon.Sprites.FrontDefault;
+                pkm.LowResImageSource = $"Images/LowRes/{pokemon.Id}.png";
+                pkm.HighResImageSource = $"Images/HighRes/{pokemon.Id}.png";
 
                 await GetSpeciesInfo(pkm, pkmID);
             }
