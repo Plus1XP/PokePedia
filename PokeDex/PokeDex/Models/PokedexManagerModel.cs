@@ -96,13 +96,9 @@ namespace PokeDex.Models
                 pkm.Name = pokemon.Name;
                 pkm.ID = pokemon.Id;
                 pkm.Types = GetTypes(pkm.Types, pokemon);
-                //pkm.Type1 = pokemon.Types[0].Type.Name;
-                //pkm.Type2 = pokemon.Types[1].Type.Name ?? "";
                 pkm.Weight = pokemon.Weight;
                 pkm.Height = pokemon.Height;
                 pkm.Abilities = GetAbilities(pkm.Abilities, pokemon);
-                //pkm.Ability1 = pokemon.Abilities[0].Ability.Name;
-                //pkm.Ability2 = pokemon.Abilities[1].Ability.Name ?? "";
                 pkm.BaseXP = pokemon.BaseExperience;
                 pkm.HP = pokemon.Stats[0].BaseStat;
                 pkm.Attack = pokemon.Stats[1].BaseStat;
@@ -130,7 +126,8 @@ namespace PokeDex.Models
             {
                 PokemonSpecies species = await pokeApi.GetResourceAsync<PokemonSpecies>(pkmID);
                 //pkm.species = new Species();
-                pkm.species.Bio = Regex.Replace(species.FlavorTextEntries[0].FlavorText, @"\n+", " ");
+                //pkm.species.Bio = Regex.Replace(species.FlavorTextEntries[0].Language , @"\n+", " ");
+                pkm.species.Bio = GetFlavourText(species);
                 pkm.species.CaptureRate = species.CaptureRate;
                 pkm.species.Colour = species.Color.Name;
                 pkm.species.EggGroups = GetEggGroups(pkm.species.EggGroups, species);
@@ -183,6 +180,21 @@ namespace PokeDex.Models
             }
 
             return list;
+        }
+
+        public string GetFlavourText(PokemonSpecies species)
+        {
+            string bio = string.Empty;
+
+            foreach (var item in species.FlavorTextEntries)
+            {
+                if (item.Language.Name.Equals("en"))
+                {
+                    return Regex.Replace(item.FlavorText, @"\n", " ").Replace("\f", " ").Replace("\u000c", " ").Replace("POKéMON", "Pokémon");
+                }
+            }
+
+            return bio;
         }
 
         public string GetHighResImage(int pokeID)
