@@ -1055,7 +1055,7 @@
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadUnhandledDeviceExceptionPokeDexiOSHideInfoBar="True" TriggeredFromHotReload="False" />
+      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadUnhandledDeviceExceptionPokeDexiOSHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>
