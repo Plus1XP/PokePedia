@@ -51,7 +51,7 @@
                 
                 <Image Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center" Source="{Binding HighImage, Converter={StaticResource ImageSourceConverter}}"/>
                 
-                <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" Margin="15,30,15,0" Text="{Binding Bio}"/>
+                <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" Margin="15,30,15,0" Text="{Binding Bio}" LineBreakMode="WordWrap"/>
 
                 <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" Margin="15,5,15,30" Text="{Binding Group}" FontSize="Caption" FontAttributes="Italic"/>
 
