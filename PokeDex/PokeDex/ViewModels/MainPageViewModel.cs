@@ -17,26 +17,32 @@ namespace PokeDex.ViewModels
     class MainPageViewModel : INotifyPropertyChanged
     {
         private PokedexManagerModel pkmManager;
+        private DetailsPage detailsPageView;
+        private DetailsPageViewModel detailsPageViewModel;
+
+        private DataManager dataManager;
+
+        private int pkmToFind = 151;
 
         public MainPageViewModel()
         {
+            detailsPageView = new DetailsPage();
+            detailsPageViewModel = new DetailsPageViewModel();
             pkmManager = new PokedexManagerModel();
-            pkmList = new ObservableCollection<PokedexModel>();
 
-            OnSearch = new AsyncRelayCommand(() => pkmManager.PopulatePokemonList(pkmList, 3));
-            //OnSearch = new AsyncRelayCommand(() => pkmManager.PopulatePokemonListWithSpecies(pkmList, 3));
-            //IsTapped = new AsyncRelayCommand(ItemTapped);
+            dataManager = new DataManager();
+
+            OnSearch = new AsyncRelayCommand(() => OnLoadPokemonList(pkmToFind));
+
             IsTapped = new Command<PokedexModel>(async p => await ItemTapped(p));
+
+            OnSearch.Execute(null);
         }
-
-        //public AsyncRelayCommand load { get; private set; }
-
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         public AsyncRelayCommand OnSearch { get; private set; }
 
-        //public AsyncRelayCommand IsTapped { get; private set; }
         public Command<PokedexModel> IsTapped { get; private set; }
 
         public ObservableCollection<PokedexModel> pkmList { get; private set; }
@@ -51,10 +57,17 @@ namespace PokeDex.ViewModels
             }
         }
 
+        public async Task OnLoadPokemonList(int pkmToFind)
+        {
+            pkmList = new ObservableCollection<PokedexModel>(await dataManager.LoadPokemonDataList(pkmToFind));
+            OnPropertChanged(null);
+        }
+
         private async Task ItemTapped(PokedexModel pkm)
         {
-            await Application.Current.MainPage.Navigation.PushAsync(new DetailsPage());
             MessagingCenter.Send<MainPageViewModel, PokedexModel>(this, "Send_Selected_Pokemon", pkm);
+            detailsPageView.BindingContext = detailsPageViewModel;
+            await Application.Current.MainPage.Navigation.PushAsync(detailsPageView);
         }
     }
 }
