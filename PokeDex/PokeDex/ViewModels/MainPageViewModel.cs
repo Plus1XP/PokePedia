@@ -20,16 +20,23 @@ namespace PokeDex.ViewModels
         private DetailsPage detailsPageView;
         private DetailsPageViewModel detailsPageViewModel;
 
+        private DataManager dataManager;
+
+        private int pkmToFind = 151;
+
         public MainPageViewModel()
         {
             detailsPageView = new DetailsPage();
             detailsPageViewModel = new DetailsPageViewModel();
             pkmManager = new PokedexManagerModel();
 
-            pkmList = new ObservableCollection<PokedexModel>();
+            dataManager = new DataManager();
 
-            OnSearch = new AsyncRelayCommand(() => pkmManager.PopulatePokemonList(pkmList, 25));
+            OnSearch = new AsyncRelayCommand(() => OnLoadPokemonList(pkmToFind));
+
             IsTapped = new Command<PokedexModel>(async p => await ItemTapped(p));
+
+            OnSearch.Execute(null);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -48,6 +55,12 @@ namespace PokeDex.ViewModels
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(property));
             }
+        }
+
+        public async Task OnLoadPokemonList(int pkmToFind)
+        {
+            pkmList = new ObservableCollection<PokedexModel>(await dataManager.LoadPokemonDataList(pkmToFind));
+            OnPropertChanged(null);
         }
 
         private async Task ItemTapped(PokedexModel pkm)
