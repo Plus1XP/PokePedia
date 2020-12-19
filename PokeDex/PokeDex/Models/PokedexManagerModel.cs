@@ -109,6 +109,7 @@ namespace PokeDex.Models
                 pkm.SpecialDefence = pokemon.Stats[4].BaseStat;
                 pkm.Speed = pokemon.Stats[5].BaseStat;
                 //pkm.LowResImageSource = pokemon.Sprites.FrontDefault;
+                pkm.OriginalImageSource = $"Images/Original/{pokemon.Id}.png";
                 pkm.LowResImageSource = $"Images/LowRes/{pokemon.Id}.png";
                 pkm.HighResImageSource = $"Images/HighRes/{pokemon.Id}.png";
 

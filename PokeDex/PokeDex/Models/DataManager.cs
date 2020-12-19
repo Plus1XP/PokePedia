@@ -61,5 +61,10 @@ namespace PokeDex.Models
             dataModel.SaveDataToFile(fileLocation, data);
             return data;
         }
+
+        public void RemovePokemonDataFile()
+        {
+            dataModel.DeleteDataFile(fileLocation);
+        }
     }
 }

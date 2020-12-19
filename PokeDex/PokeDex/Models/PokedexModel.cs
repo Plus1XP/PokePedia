@@ -19,6 +19,7 @@ namespace PokeDex.Models
         public int SpecialAttack { get; set; }
         public int SpecialDefence { get; set; }
         public int Speed { get; set; }
+        public string OriginalImageSource { get; set; }
         public string LowResImageSource { get; set; }
         public string HighResImageSource { get; set; }
 
