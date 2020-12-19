@@ -30,5 +30,10 @@ namespace PokeDex.Models
         {
             File.WriteAllText(file, JsonConvert.SerializeObject(data));
         }
+
+        public void DeleteDataFile(string file)
+        {
+            File.Delete(file);
+        }
     }
 }
