@@ -149,7 +149,6 @@
       <Name>PokeDex</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <BundleResource Include="Images\LowRes\1.png" />
   </ItemGroup>
@@ -1055,6 +1054,465 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Images\HighRes\99.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\101.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\102.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\103.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\104.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\105.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\106.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\107.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\108.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\109.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\110.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\111.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\112.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\113.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\114.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\115.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\116.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\117.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\118.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\119.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\120.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\121.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\122.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\123.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\124.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\125.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\126.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\127.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\129.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\130.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\131.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\132.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\133.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\134.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\135.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\136.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\137.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\138.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\139.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\140.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\141.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\142.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\143.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\144.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\145.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\146.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\147.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\148.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\149.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\150.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\151.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\19.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\27.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\28.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\34.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\37.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\38.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\39.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\41.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\42.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\43.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\44.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\45.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\46.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\47.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\49.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\51.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\52.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\53.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\54.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\55.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\56.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\57.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\58.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\59.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\61.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\62.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\63.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\65.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\66.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\67.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\68.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\69.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\70.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\71.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\73.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\74.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\75.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\76.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\77.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\78.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\79.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\81.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\82.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\83.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\84.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\85.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\86.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\87.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\88.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\89.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\91.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\92.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\93.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\94.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\95.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\97.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\98.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\99.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\Badges.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Original\Logo.png" />
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
