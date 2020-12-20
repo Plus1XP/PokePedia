@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
+using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -22,6 +23,8 @@ namespace PokeDex.ViewModels
 
         private DataManager dataManager;
 
+        private ObservableCollection<PokedexModel> searchResults;
+
         private int pkmToFind = 151;
 
         public MainPageViewModel()
@@ -32,24 +35,43 @@ namespace PokeDex.ViewModels
 
             dataManager = new DataManager();
 
-            OnSearch = new AsyncRelayCommand(() => OnLoadPokemonList(pkmToFind));
+            OnRefreshDataBase = new AsyncRelayCommand(() => OnLoadPokemonList(pkmToFind));
+
+            //PerformSearch = new Command<string>((string query) => { SearchResults = GetSearchResults(query); });
+
+            PerformSearch = new Command<string>(async query => await GetSearchResults(query));
 
             IsTapped = new Command<PokedexModel>(async p => await ItemTapped(p));
 
             OnClearData = new Command(ClearData);
 
-            OnSearch.Execute(null);
+            OnRefreshDataBase.Execute(null);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public AsyncRelayCommand OnSearch { get; private set; }
+        public AsyncRelayCommand OnRefreshDataBase { get; private set; }
 
         public Command<PokedexModel> IsTapped { get; private set; }
 
         public Command OnClearData { get; private set; }
 
+        public Command<string> PerformSearch { get; private set; }
+
         public ObservableCollection<PokedexModel> pkmList { get; private set; }
+
+        public ObservableCollection<PokedexModel> SearchResults
+        {
+            get
+            { 
+                return searchResults; 
+            }
+            set
+            {
+                searchResults = value;
+                OnPropertChanged("SearchResults");
+            }
+        }
 
         public string Search_Header { get; private set; } = "Search";
 
@@ -76,10 +98,34 @@ namespace PokeDex.ViewModels
             await Application.Current.MainPage.Navigation.PushAsync(detailsPageView);
         }
 
+        public async Task GetSearchResults(string queryString)
+        {
+            //var normalizedQuery = queryString?.ToLower() ?? "";
+            //return pkmList.Where(p => p.ToLowerInvariant().Contains(normalizedQuery)).ToList();
+
+            //ObservableCollection<PokedexModel> pokemon = new ObservableCollection<PokedexModel>(pkmList);
+            //return (ObservableCollection<PokedexModel>)pkmList.Where(p => p.Name.StartsWith(queryString));
+
+            //PokedexModel pk = pkmList.Where(p => p.Name.StartsWith(queryString)).First();
+            PokedexModel pk = pkmList.Where(p  => p.Name == queryString.ToLower()).FirstOrDefault();
+            
+            if (pk == null)
+            {
+                return;
+            }
+
+            await ItemTapped(pk);
+        }
+
+        private void SearchPokemon()
+        {
+
+        }
+
         private void ClearData()
         {
             dataManager.RemovePokemonDataFile();
-            OnSearch.Execute(null);
+            OnRefreshDataBase.Execute(null);
         }
     }
 }

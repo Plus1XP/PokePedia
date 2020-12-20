@@ -21,7 +21,6 @@
     <ContentPage.Resources>
         <viewModels:ImageSourceConverter x:Key="ImageSourceConverter"/>
         <viewModels:ElementTypeToColourConverter x:Key="ElementalTypeConverter"/>
-        <viewModels:ElementalTypeToOpacityConverter x:Key="OpacityTypeConverter"/>
     </ContentPage.Resources>
 
     <ContentPage.Content>
@@ -34,13 +33,21 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Image Grid.Row="0" Grid.Column="0" Scale="0.6" Source="{Binding Logo}" HorizontalOptions="Start" BackgroundColor="White">
-                <Image.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding OnClearData}" NumberOfTapsRequired="1"/>
-                </Image.GestureRecognizers>
-            </Image>
-            <Button Grid.Row="0" Grid.Column="0" Text="{Binding Search_Header}" Command="{Binding OnSearch}" HorizontalOptions="CenterAndExpand" BackgroundColor="White"/>
-
+            <Grid Grid.Row="0" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Image Grid.Column="0" Scale="0.6" Source="{Binding Logo}" HorizontalOptions="Start" BackgroundColor="White">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OnClearData}" NumberOfTapsRequired="1"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <SearchBar Grid.Column="1" x:Name="searchBar" Placeholder="{Binding Search_Header}" SearchCommand="{Binding PerformSearch}" SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}" HorizontalOptions="Start" BackgroundColor="White"/>
+                <!--<ListView x:Name="SearchResults" ItemsSource="{Binding SearchResults}" VerticalOptions="StartAndExpand"/>-->
+            </Grid>
+            
             <ListView Grid.Row="1" Grid.Column="0" x:Name="PokeDexList" ItemsSource="{Binding pkmList}" SeparatorVisibility="None">
                 <ListView.Behaviors>
                     <viewModels:ItemTappedBehaviour Command="{Binding IsTapped}" CommandParameter="{Binding Source={x:Reference PokeDexList}, Path=SelectedItem}"/>
