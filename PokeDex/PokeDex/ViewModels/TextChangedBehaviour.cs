@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Text;
 using System.Windows.Input;
 
@@ -8,13 +7,13 @@ using Xamarin.Forms;
 
 namespace PokeDex.ViewModels
 {
-    public class ItemTappedBehaviour :Behavior<ListView>
+    class TextChangedBehaviour : Behavior<SearchBar>
     {
         public static readonly BindableProperty CommandProperty =
-            BindableProperty.Create(propertyName: "Command", returnType: typeof(ICommand), declaringType: typeof(ItemTappedBehaviour));
+            BindableProperty.Create(propertyName: "Command", returnType: typeof(ICommand), declaringType: typeof(TextChangedBehaviour));
 
         public static readonly BindableProperty CommandParameterProperty =
-            BindableProperty.Create(propertyName: "CommandParameter", returnType: typeof(object), declaringType: typeof(ItemSelectedBehaviour));
+            BindableProperty.Create(propertyName: "CommandParameter", returnType: typeof(object), declaringType: typeof(TextChangedBehaviour));
 
         public ICommand Command
         {
@@ -28,31 +27,29 @@ namespace PokeDex.ViewModels
             set { SetValue(CommandParameterProperty, value); }
         }
 
-        protected override void OnAttachedTo(ListView bindable)
+        protected override void OnAttachedTo(SearchBar bindable)
         {
             base.OnAttachedTo(bindable);
-            bindable.ItemTapped += BindableOnItemTapped;
+            bindable.TextChanged += BindableOnTextChanged;
             bindable.BindingContextChanged += BindableOnBindingContextChanged;
         }
 
-        protected override void OnDetachingFrom(ListView bindable)
+        protected override void OnDetachingFrom(SearchBar bindable)
         {
             base.OnDetachingFrom(bindable);
-            bindable.ItemTapped -= BindableOnItemTapped;
-            bindable.ItemTapped -= BindableOnBindingContextChanged;
+            bindable.TextChanged -= BindableOnTextChanged;
+            bindable.TextChanged -= BindableOnBindingContextChanged;
         }
 
-        private void BindableOnItemTapped(object sender, ItemTappedEventArgs itemTappedEventArgs)
+        private void BindableOnTextChanged(object sender, TextChangedEventArgs itemTappedEventArgs)
         {
-            ListView listView = sender as ListView;
             Command.Execute(CommandParameter);
-            listView.SelectedItem = null;
         }
 
         private void BindableOnBindingContextChanged(object sender, EventArgs eventArgs)
         {
-            ListView listView = sender as ListView;
-            BindingContext = listView?.BindingContext;
+            SearchBar searchText = sender as SearchBar;
+            BindingContext = searchText?.BindingContext;
         }
     }
 }
