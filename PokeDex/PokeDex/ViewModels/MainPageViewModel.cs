@@ -42,7 +42,7 @@ namespace PokeDex.ViewModels
 
             RefreshDataBaseCommand = new Command(async () => await LoadPokemonList(pkmToFind));
 
-            PerformSearchCommand = new Command<string>((string query) => { SearchSuggestionsCollection = GetSearchResults(query); });
+            PerformSearchCommand = new Command<string>((string query) => { SearchSuggestionsCollection = GetSearchResults(query ?? string.Empty); });
 
             ItemTappedCommand = new Command<PokedexModel>(async p => await ItemTapped(p));
 
@@ -50,8 +50,6 @@ namespace PokeDex.ViewModels
 
             RefreshDataBaseCommand.Execute(null);
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public Command RefreshDataBaseCommand { get; }
 
@@ -76,9 +74,6 @@ namespace PokeDex.ViewModels
             }
         }
 
-        public string SearchBoxPlaceHolder { get; private set; } = "Search";
-
-        public string Logo_Header => logoPath;
         public bool IsSearchResultsListVisible
         {
             get
@@ -91,6 +86,12 @@ namespace PokeDex.ViewModels
                 OnPropertChanged("IsSearchResultsListVisible");
             }
         }
+
+        public string SearchBoxPlaceHolder { get; private set; } = "Search Pokemon";
+
+        public string Logo_Header => logoPath;
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         private void OnPropertChanged(string property)
         {
@@ -107,12 +108,11 @@ namespace PokeDex.ViewModels
                 IsSearchResultsListVisible = true;
                 //return new ObservableCollection<PokedexModel>(pkmList.Where(p => p.Name.ToLower().StartsWith(query.ToLower())));
                 return new ObservableCollection<PokedexModel>(pkmList.Where(p => p.Name.ToLower().Contains(query.ToLower())));
-
             }
             else
             {
                 IsSearchResultsListVisible = false;
-                return null;
+                return new ObservableCollection<PokedexModel>();
             }
         }
 
