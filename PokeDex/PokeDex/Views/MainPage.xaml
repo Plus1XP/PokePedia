@@ -44,9 +44,7 @@
                         <TapGestureRecognizer Command="{Binding ClearDataCommand}" NumberOfTapsRequired="1"/>
                     </Image.GestureRecognizers>
                 </Image>
-                <SearchBar Grid.Column="1" x:Name="PokemonSearchBar" Placeholder="{Binding SearchBoxPlaceHolder}" HorizontalOptions="Start" BackgroundColor="White"
-                           SearchCommand="{Binding PerformSearchCommand}" SearchCommandParameter="{Binding Text, Source={x:Reference PokemonSearchBar}}">
-                    <!--Above Code is probably useless ^ -->
+                <SearchBar Grid.Column="1" x:Name="PokemonSearchBar" Placeholder="{Binding SearchBoxPlaceHolder}" HorizontalOptions="Start" BackgroundColor="White">
                     <SearchBar.Behaviors>
                         <viewModels:TextChangedBehaviour Command="{Binding PerformSearchCommand}" CommandParameter="{Binding Source={x:Reference PokemonSearchBar}, Path=Text}"/>
                     </SearchBar.Behaviors>
@@ -92,7 +90,7 @@
                 </ListView.ItemTemplate>
             </ListView>
 
-            <ListView Grid.Row="1" Grid.Column="0" x:Name="SearchResultsList" ItemsSource="{Binding SearchSuggestionsCollection}" VerticalOptions="StartAndExpand" IsVisible="{Binding IsSearchResultsListVisible}">
+            <ListView Grid.Row="1" Grid.Column="0" x:Name="SearchResultsList" ItemsSource="{Binding SearchSuggestionsCollection}" SeparatorVisibility="None" IsVisible="{Binding IsSearchResultsListVisible}">
                 <ListView.Behaviors>
                     <viewModels:ItemTappedBehaviour Command="{Binding ItemTappedCommand}" CommandParameter="{Binding Source={x:Reference SearchResultsList}, Path=SelectedItem}"/>
                 </ListView.Behaviors>
