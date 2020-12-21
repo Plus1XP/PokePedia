@@ -18,64 +18,79 @@ namespace PokeDex.ViewModels
     class MainPageViewModel : INotifyPropertyChanged
     {
         private PokedexManagerModel pkmManager;
-        private DetailsPage detailsPageView;
-        private DetailsPageViewModel detailsPageViewModel;
 
         private DataManager dataManager;
 
-        private ObservableCollection<PokedexModel> searchResults;
+        private DetailsPage detailsPageView;
+        private DetailsPageViewModel detailsPageViewModel;
+
+        private ObservableCollection<PokedexModel> searchSuggestionsCollection;
 
         private int pkmToFind = 151;
 
+        private bool isSearchResultsListVisible = false;
+        private string logoPath = $"Images/Original/Logo.png";
+
         public MainPageViewModel()
         {
-            detailsPageView = new DetailsPage();
-            detailsPageViewModel = new DetailsPageViewModel();
             pkmManager = new PokedexManagerModel();
 
             dataManager = new DataManager();
 
-            OnRefreshDataBase = new AsyncRelayCommand(() => OnLoadPokemonList(pkmToFind));
+            detailsPageView = new DetailsPage();
+            detailsPageViewModel = new DetailsPageViewModel();
 
-            //PerformSearch = new Command<string>((string query) => { SearchResults = GetSearchResults(query); });
+            RefreshDataBaseCommand = new Command(async () => await LoadPokemonList(pkmToFind));
 
-            PerformSearch = new Command<string>(async query => await GetSearchResults(query));
+            PerformSearchCommand = new Command<string>((string query) => { SearchSuggestionsCollection = GetSearchResults(query); });
 
-            IsTapped = new Command<PokedexModel>(async p => await ItemTapped(p));
+            ItemTappedCommand = new Command<PokedexModel>(async p => await ItemTapped(p));
 
-            OnClearData = new Command(ClearData);
+            ClearDataCommand = new Command(ClearData);
 
-            OnRefreshDataBase.Execute(null);
+            RefreshDataBaseCommand.Execute(null);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public AsyncRelayCommand OnRefreshDataBase { get; private set; }
+        public Command RefreshDataBaseCommand { get; }
 
-        public Command<PokedexModel> IsTapped { get; private set; }
+        public Command<PokedexModel> ItemTappedCommand { get; }
 
-        public Command OnClearData { get; private set; }
+        public Command ClearDataCommand { get; }
 
-        public Command<string> PerformSearch { get; private set; }
+        public Command<string> PerformSearchCommand { get; }
 
         public ObservableCollection<PokedexModel> pkmList { get; private set; }
 
-        public ObservableCollection<PokedexModel> SearchResults
+        public ObservableCollection<PokedexModel> SearchSuggestionsCollection
         {
             get
-            { 
-                return searchResults; 
+            {
+                return searchSuggestionsCollection;
             }
             set
             {
-                searchResults = value;
-                OnPropertChanged("SearchResults");
+                searchSuggestionsCollection = value;
+                OnPropertChanged("SearchSuggestionsCollection");
             }
         }
 
-        public string Search_Header { get; private set; } = "Search";
+        public string SearchBoxPlaceHolder { get; private set; } = "Search";
 
-        public string Logo { get; private set; } = $"Images/Original/Logo.png";
+        public string Logo_Header => logoPath;
+        public bool IsSearchResultsListVisible
+        {
+            get
+            {
+                return isSearchResultsListVisible;
+            }
+            set
+            {
+                isSearchResultsListVisible = value;
+                OnPropertChanged("IsSearchResultsListVisible");
+            }
+        }
 
         private void OnPropertChanged(string property)
         {
@@ -85,7 +100,23 @@ namespace PokeDex.ViewModels
             }
         }
 
-        public async Task OnLoadPokemonList(int pkmToFind)
+        private ObservableCollection<PokedexModel> GetSearchResults(string query)
+        {
+            if (query.Length >= 1)
+            {
+                IsSearchResultsListVisible = true;
+                //return new ObservableCollection<PokedexModel>(pkmList.Where(p => p.Name.ToLower().StartsWith(query.ToLower())));
+                return new ObservableCollection<PokedexModel>(pkmList.Where(p => p.Name.ToLower().Contains(query.ToLower())));
+
+            }
+            else
+            {
+                IsSearchResultsListVisible = false;
+                return null;
+            }
+        }
+
+        private async Task LoadPokemonList(int pkmToFind)
         {
             pkmList = new ObservableCollection<PokedexModel>(await dataManager.LoadPokemonDataList(pkmToFind));
             OnPropertChanged(null);
@@ -96,36 +127,12 @@ namespace PokeDex.ViewModels
             MessagingCenter.Send<MainPageViewModel, PokedexModel>(this, "Send_Selected_Pokemon", pkm);
             detailsPageView.BindingContext = detailsPageViewModel;
             await Application.Current.MainPage.Navigation.PushAsync(detailsPageView);
-        }
-
-        public async Task GetSearchResults(string queryString)
-        {
-            //var normalizedQuery = queryString?.ToLower() ?? "";
-            //return pkmList.Where(p => p.ToLowerInvariant().Contains(normalizedQuery)).ToList();
-
-            //ObservableCollection<PokedexModel> pokemon = new ObservableCollection<PokedexModel>(pkmList);
-            //return (ObservableCollection<PokedexModel>)pkmList.Where(p => p.Name.StartsWith(queryString));
-
-            //PokedexModel pk = pkmList.Where(p => p.Name.StartsWith(queryString)).First();
-            PokedexModel pk = pkmList.Where(p  => p.Name == queryString.ToLower()).FirstOrDefault();
-            
-            if (pk == null)
-            {
-                return;
-            }
-
-            await ItemTapped(pk);
-        }
-
-        private void SearchPokemon()
-        {
-
-        }
+        }      
 
         private void ClearData()
         {
             dataManager.RemovePokemonDataFile();
-            OnRefreshDataBase.Execute(null);
+            RefreshDataBaseCommand.Execute(null);
         }
     }
 }
