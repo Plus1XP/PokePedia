@@ -44,7 +44,8 @@
                         <TapGestureRecognizer Command="{Binding ClearDataCommand}" NumberOfTapsRequired="1"/>
                     </Image.GestureRecognizers>
                 </Image>
-                <SearchBar Grid.Column="1" x:Name="PokemonSearchBar" Placeholder="{Binding SearchBoxPlaceHolder}" HorizontalOptions="Start" BackgroundColor="White">
+                <SearchBar Grid.Column="1" x:Name="PokemonSearchBar" Placeholder="{Binding SearchBoxPlaceHolder}" HorizontalOptions="Start" 
+                           BackgroundColor="White" IsSpellCheckEnabled="False">
                     <SearchBar.Behaviors>
                         <viewModels:TextChangedBehaviour Command="{Binding PerformSearchCommand}" CommandParameter="{Binding Source={x:Reference PokemonSearchBar}, Path=Text}"/>
                     </SearchBar.Behaviors>
