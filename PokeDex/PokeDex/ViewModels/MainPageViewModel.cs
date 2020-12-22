@@ -127,6 +127,7 @@ namespace PokeDex.ViewModels
             MessagingCenter.Send<MainPageViewModel, PokedexModel>(this, "Send_Selected_Pokemon", pkm);
             detailsPageView.BindingContext = detailsPageViewModel;
             await Application.Current.MainPage.Navigation.PushAsync(detailsPageView);
+            IsSearchResultsListVisible = false;
         }      
 
         private void ClearData()
