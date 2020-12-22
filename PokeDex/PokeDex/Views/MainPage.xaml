@@ -59,7 +59,7 @@
                 </SearchBar>
             </Grid>
 
-            <ListView Grid.Row="1" Grid.Column="0" x:Name="PokeDexList" ItemsSource="{Binding pkmList}" SeparatorVisibility="None" >
+            <ListView Grid.Row="1" Grid.Column="0" x:Name="PokeDexList" ItemsSource="{Binding pkmList}" SeparatorVisibility="None">
                 <ListView.Behaviors>
                     <viewModels:ItemTappedBehaviour Command="{Binding ItemTappedCommand}" CommandParameter="{Binding Source={x:Reference PokeDexList}, Path=SelectedItem}"/>
                 </ListView.Behaviors>
@@ -91,7 +91,6 @@
                                         <Label HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" Text="{Binding Types[1]}"/>
                                     </Frame>
                                 </StackLayout>
-
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

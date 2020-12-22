@@ -71,10 +71,10 @@
 
                 <StackLayout Grid.Row="5" Grid.Column="1" Orientation="Vertical" HorizontalOptions="End" Margin="0,0,20,0" Spacing="5">
                     <Label Text="{Binding Ability_Header}" HorizontalOptions="End" FontAttributes="Bold" FontSize="Large"/>
-                    <Frame CornerRadius="5" Padding="0" HasShadow="False" WidthRequest="150" Background="Black">
+                    <Frame CornerRadius="5" Padding="0" HasShadow="False" WidthRequest="150" Background="Gray">
                         <Label Text="{Binding Abilities[0]}" HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" />
                     </Frame>
-                    <Frame CornerRadius="5" Padding="0" HasShadow="False" WidthRequest="150" Background="Black">
+                    <Frame CornerRadius="5" Padding="0" HasShadow="False" WidthRequest="150" Background="Gray">
                         <Label Text="{Binding Abilities[1]}" HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" />
                     </Frame>
                 </StackLayout>
