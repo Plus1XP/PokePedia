@@ -68,12 +68,22 @@
                     <Label Text="{Binding Types[0]}" HorizontalOptions="Start" HorizontalTextAlignment="Center" BackgroundColor="{Binding TypeColour1_BackgroundColour}" WidthRequest="100"/>
                     <Label Text="{Binding Types[1]}" HorizontalOptions="Start" HorizontalTextAlignment="Center" BackgroundColor="{Binding TypeColour2_BackgroundColour}" WidthRequest="100"/>
                 </StackLayout>-->
+
+                <StackLayout Grid.Row="5" Grid.Column="1" Orientation="Vertical" HorizontalOptions="End" Margin="0,0,20,0" Spacing="5">
+                    <Label Text="{Binding Ability_Header}" HorizontalOptions="End" FontAttributes="Bold" FontSize="Large"/>
+                    <Frame CornerRadius="5" Padding="0" HasShadow="False" WidthRequest="150" Background="Black">
+                        <Label Text="{Binding Abilities[0]}" HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" />
+                    </Frame>
+                    <Frame CornerRadius="5" Padding="0" HasShadow="False" WidthRequest="150" Background="Black">
+                        <Label Text="{Binding Abilities[1]}" HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" />
+                    </Frame>
+                </StackLayout>
                 
-                <StackLayout Grid.Row="5" Grid.Column="1" HorizontalOptions="End" Margin="0,0,20,0" Orientation="Vertical">
+                <!--<StackLayout Grid.Row="5" Grid.Column="1" HorizontalOptions="End" Margin="0,0,20,0" Orientation="Vertical">
                     <Label Text="{Binding Ability_Header}" FontAttributes="Bold" FontSize="Large"/>
                     <Label Text="{Binding Abilities[0]}" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
                     <Label Text="{Binding Abilities[1]}" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
-                </StackLayout>
+                </StackLayout>-->
 
                 <chartForms:ChartView Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" HeightRequest="300" Chart="{Binding StatsChart}"/>
                 
