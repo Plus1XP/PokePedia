@@ -49,6 +49,13 @@
                     <SearchBar.Behaviors>
                         <viewModels:TextChangedBehaviour Command="{Binding PerformSearchCommand}" CommandParameter="{Binding Source={x:Reference PokemonSearchBar}, Path=Text}"/>
                     </SearchBar.Behaviors>
+                    <SearchBar.Keyboard>
+                        <Keyboard x:FactoryMethod="Create">
+                            <x:Arguments>
+                                <KeyboardFlags>None</KeyboardFlags>
+                            </x:Arguments>
+                        </Keyboard>
+                    </SearchBar.Keyboard>
                 </SearchBar>
             </Grid>
 
