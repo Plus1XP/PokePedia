@@ -14,7 +14,7 @@ namespace PokeDex.ViewModels
             BindableProperty.Create(propertyName: "Command", returnType: typeof(ICommand), declaringType: typeof(ItemTappedBehaviour));
 
         public static readonly BindableProperty CommandParameterProperty =
-    BindableProperty.Create(propertyName: "CommandParameter", returnType: typeof(object), declaringType: typeof(ItemSelectedBehaviour));
+            BindableProperty.Create(propertyName: "CommandParameter", returnType: typeof(object), declaringType: typeof(ItemSelectedBehaviour));
 
         public ICommand Command
         {
@@ -53,6 +53,6 @@ namespace PokeDex.ViewModels
         {
             ListView listView = sender as ListView;
             BindingContext = listView?.BindingContext;
-        } 
+        }
     }
 }

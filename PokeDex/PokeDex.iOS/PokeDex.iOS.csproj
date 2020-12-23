@@ -63,16 +63,17 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <MtouchArch>ARM64</MtouchArch>
-    <CodesignKey>Apple Distribution: Elliott Lafayette-Morgan (L4UU7WP4CE)</CodesignKey>
+    <CodesignKey>Apple Development: Elliott Lafayette-Morgan (7NX3YR358U)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <BuildIpa>true</BuildIpa>
     <MtouchLink>Full</MtouchLink>
-    <CodesignProvision>PokeDex</CodesignProvision>
+    <CodesignProvision>VS: WildCard Development</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
     <AppExtensionDebugBundleId />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="IosForceKeyboardDismissalService.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
@@ -150,1373 +151,2432 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\1.png" />
+    <BundleResource Include="Images\GreenArt\1.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\10.png" />
+    <BundleResource Include="Images\GreenArt\10.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\100.png" />
+    <BundleResource Include="Images\GreenArt\100.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\101.png" />
+    <BundleResource Include="Images\GreenArt\101.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\102.png" />
+    <BundleResource Include="Images\GreenArt\102.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\103.png" />
+    <BundleResource Include="Images\GreenArt\103.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\104.png" />
+    <BundleResource Include="Images\GreenArt\104.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\105.png" />
+    <BundleResource Include="Images\GreenArt\105.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\106.png" />
+    <BundleResource Include="Images\GreenArt\106.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\107.png" />
+    <BundleResource Include="Images\GreenArt\107.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\108.png" />
+    <BundleResource Include="Images\GreenArt\108.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\109.png" />
+    <BundleResource Include="Images\GreenArt\109.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\11.png" />
+    <BundleResource Include="Images\GreenArt\11.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\110.png" />
+    <BundleResource Include="Images\GreenArt\110.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\111.png" />
+    <BundleResource Include="Images\GreenArt\111.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\112.png" />
+    <BundleResource Include="Images\GreenArt\112.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\113.png" />
+    <BundleResource Include="Images\GreenArt\113.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\114.png" />
+    <BundleResource Include="Images\GreenArt\114.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\115.png" />
+    <BundleResource Include="Images\GreenArt\115.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\116.png" />
+    <BundleResource Include="Images\GreenArt\116.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\117.png" />
+    <BundleResource Include="Images\GreenArt\117.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\118.png" />
+    <BundleResource Include="Images\GreenArt\118.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\119.png" />
+    <BundleResource Include="Images\GreenArt\119.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\12.png" />
+    <BundleResource Include="Images\GreenArt\12.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\120.png" />
+    <BundleResource Include="Images\GreenArt\120.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\121.png" />
+    <BundleResource Include="Images\GreenArt\121.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\122.png" />
+    <BundleResource Include="Images\GreenArt\122.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\123.png" />
+    <BundleResource Include="Images\GreenArt\123.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\124.png" />
+    <BundleResource Include="Images\GreenArt\124.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\125.png" />
+    <BundleResource Include="Images\GreenArt\125.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\126.png" />
+    <BundleResource Include="Images\GreenArt\126.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\127.png" />
+    <BundleResource Include="Images\GreenArt\127.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\128.png" />
+    <BundleResource Include="Images\GreenArt\128.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\129.png" />
+    <BundleResource Include="Images\GreenArt\129.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\13.png" />
+    <BundleResource Include="Images\GreenArt\13.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\130.png" />
+    <BundleResource Include="Images\GreenArt\130.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\131.png" />
+    <BundleResource Include="Images\GreenArt\131.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\132.png" />
+    <BundleResource Include="Images\GreenArt\132.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\133.png" />
+    <BundleResource Include="Images\GreenArt\133.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\134.png" />
+    <BundleResource Include="Images\GreenArt\134.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\135.png" />
+    <BundleResource Include="Images\GreenArt\135.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\136.png" />
+    <BundleResource Include="Images\GreenArt\136.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\137.png" />
+    <BundleResource Include="Images\GreenArt\137.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\138.png" />
+    <BundleResource Include="Images\GreenArt\138.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\139.png" />
+    <BundleResource Include="Images\GreenArt\139.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\14.png" />
+    <BundleResource Include="Images\GreenArt\14.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\140.png" />
+    <BundleResource Include="Images\GreenArt\140.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\141.png" />
+    <BundleResource Include="Images\GreenArt\141.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\142.png" />
+    <BundleResource Include="Images\GreenArt\142.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\143.png" />
+    <BundleResource Include="Images\GreenArt\143.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\144.png" />
+    <BundleResource Include="Images\GreenArt\144.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\145.png" />
+    <BundleResource Include="Images\GreenArt\145.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\146.png" />
+    <BundleResource Include="Images\GreenArt\146.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\147.png" />
+    <BundleResource Include="Images\GreenArt\147.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\148.png" />
+    <BundleResource Include="Images\GreenArt\148.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\149.png" />
+    <BundleResource Include="Images\GreenArt\149.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\15.png" />
+    <BundleResource Include="Images\GreenArt\15.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\150.png" />
+    <BundleResource Include="Images\GreenArt\150.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\151.png" />
+    <BundleResource Include="Images\GreenArt\151.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\16.png" />
+    <BundleResource Include="Images\GreenArt\16.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\17.png" />
+    <BundleResource Include="Images\GreenArt\17.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\18.png" />
+    <BundleResource Include="Images\GreenArt\18.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\19.png" />
+    <BundleResource Include="Images\GreenArt\19.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\2.png" />
+    <BundleResource Include="Images\GreenArt\2.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\20.png" />
+    <BundleResource Include="Images\GreenArt\20.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\21.png" />
+    <BundleResource Include="Images\GreenArt\21.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\22.png" />
+    <BundleResource Include="Images\GreenArt\22.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\23.png" />
+    <BundleResource Include="Images\GreenArt\23.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\24.png" />
+    <BundleResource Include="Images\GreenArt\24.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\25.png" />
+    <BundleResource Include="Images\GreenArt\25.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\26.png" />
+    <BundleResource Include="Images\GreenArt\26.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\27.png" />
+    <BundleResource Include="Images\GreenArt\27.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\28.png" />
+    <BundleResource Include="Images\GreenArt\28.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\29.png" />
+    <BundleResource Include="Images\GreenArt\29.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\3.png" />
+    <BundleResource Include="Images\GreenArt\3.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\30.png" />
+    <BundleResource Include="Images\GreenArt\30.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\31.png" />
+    <BundleResource Include="Images\GreenArt\31.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\32.png" />
+    <BundleResource Include="Images\GreenArt\32.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\33.png" />
+    <BundleResource Include="Images\GreenArt\33.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\34.png" />
+    <BundleResource Include="Images\GreenArt\34.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\35.png" />
+    <BundleResource Include="Images\GreenArt\35.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\36.png" />
+    <BundleResource Include="Images\GreenArt\36.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\37.png" />
+    <BundleResource Include="Images\GreenArt\37.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\38.png" />
+    <BundleResource Include="Images\GreenArt\38.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\39.png" />
+    <BundleResource Include="Images\GreenArt\39.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\4.png" />
+    <BundleResource Include="Images\GreenArt\4.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\40.png" />
+    <BundleResource Include="Images\GreenArt\40.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\41.png" />
+    <BundleResource Include="Images\GreenArt\41.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\42.png" />
+    <BundleResource Include="Images\GreenArt\42.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\43.png" />
+    <BundleResource Include="Images\GreenArt\43.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\44.png" />
+    <BundleResource Include="Images\GreenArt\44.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\45.png" />
+    <BundleResource Include="Images\GreenArt\45.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\46.png" />
+    <BundleResource Include="Images\GreenArt\46.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\47.png" />
+    <BundleResource Include="Images\GreenArt\47.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\48.png" />
+    <BundleResource Include="Images\GreenArt\48.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\49.png" />
+    <BundleResource Include="Images\GreenArt\49.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\5.png" />
+    <BundleResource Include="Images\GreenArt\5.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\50.png" />
+    <BundleResource Include="Images\GreenArt\50.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\51.png" />
+    <BundleResource Include="Images\GreenArt\51.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\52.png" />
+    <BundleResource Include="Images\GreenArt\52.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\53.png" />
+    <BundleResource Include="Images\GreenArt\53.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\54.png" />
+    <BundleResource Include="Images\GreenArt\54.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\55.png" />
+    <BundleResource Include="Images\GreenArt\55.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\56.png" />
+    <BundleResource Include="Images\GreenArt\56.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\57.png" />
+    <BundleResource Include="Images\GreenArt\57.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\58.png" />
+    <BundleResource Include="Images\GreenArt\58.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\59.png" />
+    <BundleResource Include="Images\GreenArt\59.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\6.png" />
+    <BundleResource Include="Images\GreenArt\6.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\60.png" />
+    <BundleResource Include="Images\GreenArt\60.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\61.png" />
+    <BundleResource Include="Images\GreenArt\61.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\62.png" />
+    <BundleResource Include="Images\GreenArt\62.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\63.png" />
+    <BundleResource Include="Images\GreenArt\63.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\64.png" />
+    <BundleResource Include="Images\GreenArt\64.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\65.png" />
+    <BundleResource Include="Images\GreenArt\65.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\66.png" />
+    <BundleResource Include="Images\GreenArt\66.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\67.png" />
+    <BundleResource Include="Images\GreenArt\67.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\68.png" />
+    <BundleResource Include="Images\GreenArt\68.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\69.png" />
+    <BundleResource Include="Images\GreenArt\69.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\7.png" />
+    <BundleResource Include="Images\GreenArt\7.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\70.png" />
+    <BundleResource Include="Images\GreenArt\70.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\71.png" />
+    <BundleResource Include="Images\GreenArt\71.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\72.png" />
+    <BundleResource Include="Images\GreenArt\72.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\73.png" />
+    <BundleResource Include="Images\GreenArt\73.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\74.png" />
+    <BundleResource Include="Images\GreenArt\74.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\75.png" />
+    <BundleResource Include="Images\GreenArt\75.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\76.png" />
+    <BundleResource Include="Images\GreenArt\76.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\77.png" />
+    <BundleResource Include="Images\GreenArt\77.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\78.png" />
+    <BundleResource Include="Images\GreenArt\78.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\79.png" />
+    <BundleResource Include="Images\GreenArt\79.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\8.png" />
+    <BundleResource Include="Images\GreenArt\8.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\80.png" />
+    <BundleResource Include="Images\GreenArt\80.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\81.png" />
+    <BundleResource Include="Images\GreenArt\81.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\82.png" />
+    <BundleResource Include="Images\GreenArt\82.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\83.png" />
+    <BundleResource Include="Images\GreenArt\83.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\84.png" />
+    <BundleResource Include="Images\GreenArt\84.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\85.png" />
+    <BundleResource Include="Images\GreenArt\85.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\86.png" />
+    <BundleResource Include="Images\GreenArt\86.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\87.png" />
+    <BundleResource Include="Images\GreenArt\87.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\88.png" />
+    <BundleResource Include="Images\GreenArt\88.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\89.png" />
+    <BundleResource Include="Images\GreenArt\89.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\9.png" />
+    <BundleResource Include="Images\GreenArt\9.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\90.png" />
+    <BundleResource Include="Images\GreenArt\90.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\91.png" />
+    <BundleResource Include="Images\GreenArt\91.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\92.png" />
+    <BundleResource Include="Images\GreenArt\92.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\93.png" />
+    <BundleResource Include="Images\GreenArt\93.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\94.png" />
+    <BundleResource Include="Images\GreenArt\94.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\95.png" />
+    <BundleResource Include="Images\GreenArt\95.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\96.png" />
+    <BundleResource Include="Images\GreenArt\96.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\97.png" />
+    <BundleResource Include="Images\GreenArt\97.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\98.png" />
+    <BundleResource Include="Images\GreenArt\98.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\LowRes\99.png" />
+    <BundleResource Include="Images\GreenArt\99.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\1.png" />
+    <BundleResource Include="Images\BlueArt\1.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\10.png" />
+    <BundleResource Include="Images\BlueArt\10.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\100.png" />
+    <BundleResource Include="Images\BlueArt\100.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\101.png" />
+    <BundleResource Include="Images\BlueArt\101.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\102.png" />
+    <BundleResource Include="Images\BlueArt\102.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\103.png" />
+    <BundleResource Include="Images\BlueArt\103.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\104.png" />
+    <BundleResource Include="Images\BlueArt\104.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\105.png" />
+    <BundleResource Include="Images\BlueArt\105.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\106.png" />
+    <BundleResource Include="Images\BlueArt\106.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\107.png" />
+    <BundleResource Include="Images\BlueArt\107.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\108.png" />
+    <BundleResource Include="Images\BlueArt\108.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\109.png" />
+    <BundleResource Include="Images\BlueArt\109.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\11.png" />
+    <BundleResource Include="Images\BlueArt\11.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\110.png" />
+    <BundleResource Include="Images\BlueArt\110.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\111.png" />
+    <BundleResource Include="Images\BlueArt\111.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\112.png" />
+    <BundleResource Include="Images\BlueArt\112.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\113.png" />
+    <BundleResource Include="Images\BlueArt\113.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\114.png" />
+    <BundleResource Include="Images\BlueArt\114.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\115.png" />
+    <BundleResource Include="Images\BlueArt\115.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\116.png" />
+    <BundleResource Include="Images\BlueArt\116.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\117.png" />
+    <BundleResource Include="Images\BlueArt\117.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\118.png" />
+    <BundleResource Include="Images\BlueArt\118.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\119.png" />
+    <BundleResource Include="Images\BlueArt\119.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\12.png" />
+    <BundleResource Include="Images\BlueArt\12.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\120.png" />
+    <BundleResource Include="Images\BlueArt\120.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\121.png" />
+    <BundleResource Include="Images\BlueArt\121.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\122.png" />
+    <BundleResource Include="Images\BlueArt\122.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\123.png" />
+    <BundleResource Include="Images\BlueArt\123.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\124.png" />
+    <BundleResource Include="Images\BlueArt\124.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\125.png" />
+    <BundleResource Include="Images\BlueArt\125.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\126.png" />
+    <BundleResource Include="Images\BlueArt\126.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\127.png" />
+    <BundleResource Include="Images\BlueArt\127.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\128.png" />
+    <BundleResource Include="Images\BlueArt\128.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\129.png" />
+    <BundleResource Include="Images\BlueArt\129.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\13.png" />
+    <BundleResource Include="Images\BlueArt\13.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\130.png" />
+    <BundleResource Include="Images\BlueArt\130.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\131.png" />
+    <BundleResource Include="Images\BlueArt\131.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\132.png" />
+    <BundleResource Include="Images\BlueArt\132.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\133.png" />
+    <BundleResource Include="Images\BlueArt\133.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\134.png" />
+    <BundleResource Include="Images\BlueArt\134.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\135.png" />
+    <BundleResource Include="Images\BlueArt\135.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\136.png" />
+    <BundleResource Include="Images\BlueArt\136.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\137.png" />
+    <BundleResource Include="Images\BlueArt\137.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\138.png" />
+    <BundleResource Include="Images\BlueArt\138.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\139.png" />
+    <BundleResource Include="Images\BlueArt\139.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\14.png" />
+    <BundleResource Include="Images\BlueArt\14.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\140.png" />
+    <BundleResource Include="Images\BlueArt\140.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\141.png" />
+    <BundleResource Include="Images\BlueArt\141.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\142.png" />
+    <BundleResource Include="Images\BlueArt\142.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\143.png" />
+    <BundleResource Include="Images\BlueArt\143.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\144.png" />
+    <BundleResource Include="Images\BlueArt\144.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\145.png" />
+    <BundleResource Include="Images\BlueArt\145.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\146.png" />
+    <BundleResource Include="Images\BlueArt\146.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\147.png" />
+    <BundleResource Include="Images\BlueArt\147.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\148.png" />
+    <BundleResource Include="Images\BlueArt\148.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\149.png" />
+    <BundleResource Include="Images\BlueArt\149.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\15.png" />
+    <BundleResource Include="Images\BlueArt\15.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\150.png" />
+    <BundleResource Include="Images\BlueArt\150.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\151.png" />
+    <BundleResource Include="Images\BlueArt\151.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\16.png" />
+    <BundleResource Include="Images\BlueArt\16.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\17.png" />
+    <BundleResource Include="Images\BlueArt\17.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\18.png" />
+    <BundleResource Include="Images\BlueArt\18.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\19.png" />
+    <BundleResource Include="Images\BlueArt\19.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\2.png" />
+    <BundleResource Include="Images\BlueArt\2.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\20.png" />
+    <BundleResource Include="Images\BlueArt\20.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\21.png" />
+    <BundleResource Include="Images\BlueArt\21.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\22.png" />
+    <BundleResource Include="Images\BlueArt\22.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\23.png" />
+    <BundleResource Include="Images\BlueArt\23.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\24.png" />
+    <BundleResource Include="Images\BlueArt\24.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\25.png" />
+    <BundleResource Include="Images\BlueArt\25.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\26.png" />
+    <BundleResource Include="Images\BlueArt\26.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\27.png" />
+    <BundleResource Include="Images\BlueArt\27.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\28.png" />
+    <BundleResource Include="Images\BlueArt\28.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\29.png" />
+    <BundleResource Include="Images\BlueArt\29.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\3.png" />
+    <BundleResource Include="Images\BlueArt\3.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\30.png" />
+    <BundleResource Include="Images\BlueArt\30.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\31.png" />
+    <BundleResource Include="Images\BlueArt\31.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\32.png" />
+    <BundleResource Include="Images\BlueArt\32.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\33.png" />
+    <BundleResource Include="Images\BlueArt\33.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\34.png" />
+    <BundleResource Include="Images\BlueArt\34.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\35.png" />
+    <BundleResource Include="Images\BlueArt\35.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\36.png" />
+    <BundleResource Include="Images\BlueArt\36.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\37.png" />
+    <BundleResource Include="Images\BlueArt\37.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\38.png" />
+    <BundleResource Include="Images\BlueArt\38.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\39.png" />
+    <BundleResource Include="Images\BlueArt\39.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\4.png" />
+    <BundleResource Include="Images\BlueArt\4.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\40.png" />
+    <BundleResource Include="Images\BlueArt\40.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\41.png" />
+    <BundleResource Include="Images\BlueArt\41.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\42.png" />
+    <BundleResource Include="Images\BlueArt\42.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\43.png" />
+    <BundleResource Include="Images\BlueArt\43.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\44.png" />
+    <BundleResource Include="Images\BlueArt\44.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\45.png" />
+    <BundleResource Include="Images\BlueArt\45.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\46.png" />
+    <BundleResource Include="Images\BlueArt\46.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\47.png" />
+    <BundleResource Include="Images\BlueArt\47.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\48.png" />
+    <BundleResource Include="Images\BlueArt\48.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\49.png" />
+    <BundleResource Include="Images\BlueArt\49.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\5.png" />
+    <BundleResource Include="Images\BlueArt\5.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\50.png" />
+    <BundleResource Include="Images\BlueArt\50.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\51.png" />
+    <BundleResource Include="Images\BlueArt\51.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\52.png" />
+    <BundleResource Include="Images\BlueArt\52.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\53.png" />
+    <BundleResource Include="Images\BlueArt\53.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\54.png" />
+    <BundleResource Include="Images\BlueArt\54.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\55.png" />
+    <BundleResource Include="Images\BlueArt\55.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\56.png" />
+    <BundleResource Include="Images\BlueArt\56.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\57.png" />
+    <BundleResource Include="Images\BlueArt\57.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\58.png" />
+    <BundleResource Include="Images\BlueArt\58.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\59.png" />
+    <BundleResource Include="Images\BlueArt\59.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\6.png" />
+    <BundleResource Include="Images\BlueArt\6.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\60.png" />
+    <BundleResource Include="Images\BlueArt\60.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\61.png" />
+    <BundleResource Include="Images\BlueArt\61.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\62.png" />
+    <BundleResource Include="Images\BlueArt\62.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\63.png" />
+    <BundleResource Include="Images\BlueArt\63.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\64.png" />
+    <BundleResource Include="Images\BlueArt\64.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\65.png" />
+    <BundleResource Include="Images\BlueArt\65.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\66.png" />
+    <BundleResource Include="Images\BlueArt\66.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\67.png" />
+    <BundleResource Include="Images\BlueArt\67.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\68.png" />
+    <BundleResource Include="Images\BlueArt\68.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\69.png" />
+    <BundleResource Include="Images\BlueArt\69.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\7.png" />
+    <BundleResource Include="Images\BlueArt\7.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\70.png" />
+    <BundleResource Include="Images\BlueArt\70.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\71.png" />
+    <BundleResource Include="Images\BlueArt\71.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\72.png" />
+    <BundleResource Include="Images\BlueArt\72.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\73.png" />
+    <BundleResource Include="Images\BlueArt\73.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\74.png" />
+    <BundleResource Include="Images\BlueArt\74.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\75.png" />
+    <BundleResource Include="Images\BlueArt\75.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\76.png" />
+    <BundleResource Include="Images\BlueArt\76.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\77.png" />
+    <BundleResource Include="Images\BlueArt\77.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\78.png" />
+    <BundleResource Include="Images\BlueArt\78.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\79.png" />
+    <BundleResource Include="Images\BlueArt\79.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\8.png" />
+    <BundleResource Include="Images\BlueArt\8.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\80.png" />
+    <BundleResource Include="Images\BlueArt\80.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\81.png" />
+    <BundleResource Include="Images\BlueArt\81.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\82.png" />
+    <BundleResource Include="Images\BlueArt\82.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\83.png" />
+    <BundleResource Include="Images\BlueArt\83.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\84.png" />
+    <BundleResource Include="Images\BlueArt\84.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\85.png" />
+    <BundleResource Include="Images\BlueArt\85.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\86.png" />
+    <BundleResource Include="Images\BlueArt\86.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\87.png" />
+    <BundleResource Include="Images\BlueArt\87.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\88.png" />
+    <BundleResource Include="Images\BlueArt\88.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\89.png" />
+    <BundleResource Include="Images\BlueArt\89.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\9.png" />
+    <BundleResource Include="Images\BlueArt\9.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\90.png" />
+    <BundleResource Include="Images\BlueArt\90.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\91.png" />
+    <BundleResource Include="Images\BlueArt\91.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\92.png" />
+    <BundleResource Include="Images\BlueArt\92.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\93.png" />
+    <BundleResource Include="Images\BlueArt\93.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\94.png" />
+    <BundleResource Include="Images\BlueArt\94.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\95.png" />
+    <BundleResource Include="Images\BlueArt\95.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\96.png" />
+    <BundleResource Include="Images\BlueArt\96.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\97.png" />
+    <BundleResource Include="Images\BlueArt\97.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\98.png" />
+    <BundleResource Include="Images\BlueArt\98.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\HighRes\99.png" />
+    <BundleResource Include="Images\BlueArt\99.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\1.png" />
+    <BundleResource Include="Images\RemasteredThumbs\1.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\10.png" />
+    <BundleResource Include="Images\RemasteredThumbs\10.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\100.png" />
+    <BundleResource Include="Images\RemasteredThumbs\100.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\101.png" />
+    <BundleResource Include="Images\RemasteredThumbs\101.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\102.png" />
+    <BundleResource Include="Images\RemasteredThumbs\102.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\103.png" />
+    <BundleResource Include="Images\RemasteredThumbs\103.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\104.png" />
+    <BundleResource Include="Images\RemasteredThumbs\104.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\105.png" />
+    <BundleResource Include="Images\RemasteredThumbs\105.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\106.png" />
+    <BundleResource Include="Images\RemasteredThumbs\106.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\107.png" />
+    <BundleResource Include="Images\RemasteredThumbs\107.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\108.png" />
+    <BundleResource Include="Images\RemasteredThumbs\108.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\109.png" />
+    <BundleResource Include="Images\RemasteredThumbs\109.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\11.png" />
+    <BundleResource Include="Images\RemasteredThumbs\11.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\110.png" />
+    <BundleResource Include="Images\RemasteredThumbs\110.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\111.png" />
+    <BundleResource Include="Images\RemasteredThumbs\111.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\112.png" />
+    <BundleResource Include="Images\RemasteredThumbs\112.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\113.png" />
+    <BundleResource Include="Images\RemasteredThumbs\113.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\114.png" />
+    <BundleResource Include="Images\RemasteredThumbs\114.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\115.png" />
+    <BundleResource Include="Images\RemasteredThumbs\115.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\116.png" />
+    <BundleResource Include="Images\RemasteredThumbs\116.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\117.png" />
+    <BundleResource Include="Images\RemasteredThumbs\117.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\118.png" />
+    <BundleResource Include="Images\RemasteredThumbs\118.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\119.png" />
+    <BundleResource Include="Images\RemasteredThumbs\119.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\12.png" />
+    <BundleResource Include="Images\RemasteredThumbs\12.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\120.png" />
+    <BundleResource Include="Images\RemasteredThumbs\120.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\121.png" />
+    <BundleResource Include="Images\RemasteredThumbs\121.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\122.png" />
+    <BundleResource Include="Images\RemasteredThumbs\122.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\123.png" />
+    <BundleResource Include="Images\RemasteredThumbs\123.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\124.png" />
+    <BundleResource Include="Images\RemasteredThumbs\124.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\125.png" />
+    <BundleResource Include="Images\RemasteredThumbs\125.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\126.png" />
+    <BundleResource Include="Images\RemasteredThumbs\126.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\127.png" />
+    <BundleResource Include="Images\RemasteredThumbs\127.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\128.png" />
+    <BundleResource Include="Images\RemasteredThumbs\128.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\129.png" />
+    <BundleResource Include="Images\RemasteredThumbs\129.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\13.png" />
+    <BundleResource Include="Images\RemasteredThumbs\13.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\130.png" />
+    <BundleResource Include="Images\RemasteredThumbs\130.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\131.png" />
+    <BundleResource Include="Images\RemasteredThumbs\131.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\132.png" />
+    <BundleResource Include="Images\RemasteredThumbs\132.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\133.png" />
+    <BundleResource Include="Images\RemasteredThumbs\133.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\134.png" />
+    <BundleResource Include="Images\RemasteredThumbs\134.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\135.png" />
+    <BundleResource Include="Images\RemasteredThumbs\135.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\136.png" />
+    <BundleResource Include="Images\RemasteredThumbs\136.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\137.png" />
+    <BundleResource Include="Images\RemasteredThumbs\137.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\138.png" />
+    <BundleResource Include="Images\RemasteredThumbs\138.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\139.png" />
+    <BundleResource Include="Images\RemasteredThumbs\139.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\14.png" />
+    <BundleResource Include="Images\RemasteredThumbs\14.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\140.png" />
+    <BundleResource Include="Images\RemasteredThumbs\140.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\141.png" />
+    <BundleResource Include="Images\RemasteredThumbs\141.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\142.png" />
+    <BundleResource Include="Images\RemasteredThumbs\142.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\143.png" />
+    <BundleResource Include="Images\RemasteredThumbs\143.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\144.png" />
+    <BundleResource Include="Images\RemasteredThumbs\144.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\145.png" />
+    <BundleResource Include="Images\RemasteredThumbs\145.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\146.png" />
+    <BundleResource Include="Images\RemasteredThumbs\146.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\147.png" />
+    <BundleResource Include="Images\RemasteredThumbs\147.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\148.png" />
+    <BundleResource Include="Images\RemasteredThumbs\148.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\149.png" />
+    <BundleResource Include="Images\RemasteredThumbs\149.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\15.png" />
+    <BundleResource Include="Images\RemasteredThumbs\15.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\150.png" />
+    <BundleResource Include="Images\RemasteredThumbs\150.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\151.png" />
+    <BundleResource Include="Images\RemasteredThumbs\151.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\16.png" />
+    <BundleResource Include="Images\RemasteredThumbs\16.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\17.png" />
+    <BundleResource Include="Images\RemasteredThumbs\17.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\18.png" />
+    <BundleResource Include="Images\RemasteredThumbs\18.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\19.png" />
+    <BundleResource Include="Images\RemasteredThumbs\19.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\2.png" />
+    <BundleResource Include="Images\RemasteredThumbs\2.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\20.png" />
+    <BundleResource Include="Images\RemasteredThumbs\20.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\21.png" />
+    <BundleResource Include="Images\RemasteredThumbs\21.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\22.png" />
+    <BundleResource Include="Images\RemasteredThumbs\22.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\23.png" />
+    <BundleResource Include="Images\RemasteredThumbs\23.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\24.png" />
+    <BundleResource Include="Images\RemasteredThumbs\24.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\25.png" />
+    <BundleResource Include="Images\RemasteredThumbs\25.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\26.png" />
+    <BundleResource Include="Images\RemasteredThumbs\26.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\27.png" />
+    <BundleResource Include="Images\RemasteredThumbs\27.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\28.png" />
+    <BundleResource Include="Images\RemasteredThumbs\28.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\29.png" />
+    <BundleResource Include="Images\RemasteredThumbs\29.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\3.png" />
+    <BundleResource Include="Images\RemasteredThumbs\3.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\30.png" />
+    <BundleResource Include="Images\RemasteredThumbs\30.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\31.png" />
+    <BundleResource Include="Images\RemasteredThumbs\31.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\32.png" />
+    <BundleResource Include="Images\RemasteredThumbs\32.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\33.png" />
+    <BundleResource Include="Images\RemasteredThumbs\33.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\34.png" />
+    <BundleResource Include="Images\RemasteredThumbs\34.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\35.png" />
+    <BundleResource Include="Images\RemasteredThumbs\35.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\36.png" />
+    <BundleResource Include="Images\RemasteredThumbs\36.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\37.png" />
+    <BundleResource Include="Images\RemasteredThumbs\37.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\38.png" />
+    <BundleResource Include="Images\RemasteredThumbs\38.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\39.png" />
+    <BundleResource Include="Images\RemasteredThumbs\39.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\4.png" />
+    <BundleResource Include="Images\RemasteredThumbs\4.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\40.png" />
+    <BundleResource Include="Images\RemasteredThumbs\40.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\41.png" />
+    <BundleResource Include="Images\RemasteredThumbs\41.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\42.png" />
+    <BundleResource Include="Images\RemasteredThumbs\42.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\43.png" />
+    <BundleResource Include="Images\RemasteredThumbs\43.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\44.png" />
+    <BundleResource Include="Images\RemasteredThumbs\44.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\45.png" />
+    <BundleResource Include="Images\RemasteredThumbs\45.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\46.png" />
+    <BundleResource Include="Images\RemasteredThumbs\46.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\47.png" />
+    <BundleResource Include="Images\RemasteredThumbs\47.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\48.png" />
+    <BundleResource Include="Images\RemasteredThumbs\48.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\49.png" />
+    <BundleResource Include="Images\RemasteredThumbs\49.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\5.png" />
+    <BundleResource Include="Images\RemasteredThumbs\5.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\50.png" />
+    <BundleResource Include="Images\RemasteredThumbs\50.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\51.png" />
+    <BundleResource Include="Images\RemasteredThumbs\51.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\52.png" />
+    <BundleResource Include="Images\RemasteredThumbs\52.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\53.png" />
+    <BundleResource Include="Images\RemasteredThumbs\53.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\54.png" />
+    <BundleResource Include="Images\RemasteredThumbs\54.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\55.png" />
+    <BundleResource Include="Images\RemasteredThumbs\55.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\56.png" />
+    <BundleResource Include="Images\RemasteredThumbs\56.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\57.png" />
+    <BundleResource Include="Images\RemasteredThumbs\57.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\58.png" />
+    <BundleResource Include="Images\RemasteredThumbs\58.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\59.png" />
+    <BundleResource Include="Images\RemasteredThumbs\59.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\6.png" />
+    <BundleResource Include="Images\RemasteredThumbs\6.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\60.png" />
+    <BundleResource Include="Images\RemasteredThumbs\60.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\61.png" />
+    <BundleResource Include="Images\RemasteredThumbs\61.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\62.png" />
+    <BundleResource Include="Images\RemasteredThumbs\62.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\63.png" />
+    <BundleResource Include="Images\RemasteredThumbs\63.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\64.png" />
+    <BundleResource Include="Images\RemasteredThumbs\64.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\65.png" />
+    <BundleResource Include="Images\RemasteredThumbs\65.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\66.png" />
+    <BundleResource Include="Images\RemasteredThumbs\66.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\67.png" />
+    <BundleResource Include="Images\RemasteredThumbs\67.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\68.png" />
+    <BundleResource Include="Images\RemasteredThumbs\68.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\69.png" />
+    <BundleResource Include="Images\RemasteredThumbs\69.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\7.png" />
+    <BundleResource Include="Images\RemasteredThumbs\7.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\70.png" />
+    <BundleResource Include="Images\RemasteredThumbs\70.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\71.png" />
+    <BundleResource Include="Images\RemasteredThumbs\71.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\72.png" />
+    <BundleResource Include="Images\RemasteredThumbs\72.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\73.png" />
+    <BundleResource Include="Images\RemasteredThumbs\73.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\74.png" />
+    <BundleResource Include="Images\RemasteredThumbs\74.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\75.png" />
+    <BundleResource Include="Images\RemasteredThumbs\75.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\76.png" />
+    <BundleResource Include="Images\RemasteredThumbs\76.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\77.png" />
+    <BundleResource Include="Images\RemasteredThumbs\77.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\78.png" />
+    <BundleResource Include="Images\RemasteredThumbs\78.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\79.png" />
+    <BundleResource Include="Images\RemasteredThumbs\79.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\8.png" />
+    <BundleResource Include="Images\RemasteredThumbs\8.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\80.png" />
+    <BundleResource Include="Images\RemasteredThumbs\80.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\81.png" />
+    <BundleResource Include="Images\RemasteredThumbs\81.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\82.png" />
+    <BundleResource Include="Images\RemasteredThumbs\82.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\83.png" />
+    <BundleResource Include="Images\RemasteredThumbs\83.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\84.png" />
+    <BundleResource Include="Images\RemasteredThumbs\84.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\85.png" />
+    <BundleResource Include="Images\RemasteredThumbs\85.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\86.png" />
+    <BundleResource Include="Images\RemasteredThumbs\86.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\87.png" />
+    <BundleResource Include="Images\RemasteredThumbs\87.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\88.png" />
+    <BundleResource Include="Images\RemasteredThumbs\88.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\89.png" />
+    <BundleResource Include="Images\RemasteredThumbs\89.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\9.png" />
+    <BundleResource Include="Images\RemasteredThumbs\9.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\90.png" />
+    <BundleResource Include="Images\RemasteredThumbs\90.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\91.png" />
+    <BundleResource Include="Images\RemasteredThumbs\91.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\92.png" />
+    <BundleResource Include="Images\RemasteredThumbs\92.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\93.png" />
+    <BundleResource Include="Images\RemasteredThumbs\93.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\94.png" />
+    <BundleResource Include="Images\RemasteredThumbs\94.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\95.png" />
+    <BundleResource Include="Images\RemasteredThumbs\95.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\96.png" />
+    <BundleResource Include="Images\RemasteredThumbs\96.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\97.png" />
+    <BundleResource Include="Images\RemasteredThumbs\97.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\98.png" />
+    <BundleResource Include="Images\RemasteredThumbs\98.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\99.png" />
+    <BundleResource Include="Images\RemasteredThumbs\99.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\Badges.png" />
+    <BundleResource Include="Images\RemasteredThumbs\Badges.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Images\Original\Logo.png" />
+    <BundleResource Include="Images\RemasteredThumbs\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\101.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\102.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\103.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\104.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\105.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\106.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\107.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\108.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\109.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\110.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\111.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\112.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\113.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\114.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\115.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\116.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\117.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\118.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\119.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\120.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\121.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\122.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\123.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\124.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\125.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\126.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\127.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\129.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\130.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\131.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\132.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\133.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\134.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\135.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\136.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\137.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\138.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\139.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\140.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\141.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\142.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\143.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\144.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\145.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\146.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\147.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\148.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\149.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\150.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\151.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\19.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\27.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\28.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\34.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\37.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\38.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\39.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\41.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\42.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\43.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\44.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\45.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\46.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\47.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\49.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\51.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\52.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\53.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\54.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\55.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\56.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\57.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\58.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\59.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\61.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\62.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\63.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\65.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\66.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\67.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\68.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\69.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\70.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\71.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\73.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\74.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\75.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\76.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\77.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\78.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\79.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\81.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\82.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\83.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\84.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\85.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\86.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\87.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\88.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\89.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\91.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\92.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\93.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\94.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\95.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\97.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\98.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernArt\99.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\101.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\102.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\103.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\104.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\105.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\106.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\107.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\108.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\109.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\110.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\111.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\112.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\113.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\114.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\115.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\116.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\117.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\118.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\119.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\120.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\121.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\122.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\123.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\124.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\125.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\126.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\127.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\129.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\130.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\131.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\132.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\133.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\134.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\135.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\136.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\137.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\138.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\139.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\140.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\141.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\142.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\143.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\144.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\145.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\146.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\147.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\148.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\149.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\150.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\151.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\19.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\27.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\28.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\34.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\37.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\38.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\39.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\41.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\42.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\43.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\44.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\45.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\46.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\47.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\49.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\51.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\52.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\53.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\54.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\55.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\56.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\57.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\58.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\59.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\61.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\62.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\63.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\65.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\66.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\67.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\68.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\69.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\70.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\71.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\73.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\74.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\75.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\76.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\77.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\78.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\79.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\81.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\82.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\83.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\84.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\85.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\86.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\87.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\88.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\89.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\91.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\92.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\93.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\94.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\95.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\97.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\98.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Footprints\99.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\ModernThumbs\1.png" />
+    <BundleResource Include="Images\ModernThumbs\10.png" />
+    <BundleResource Include="Images\ModernThumbs\100.png" />
+    <BundleResource Include="Images\ModernThumbs\101.png" />
+    <BundleResource Include="Images\ModernThumbs\102.png" />
+    <BundleResource Include="Images\ModernThumbs\103.png" />
+    <BundleResource Include="Images\ModernThumbs\104.png" />
+    <BundleResource Include="Images\ModernThumbs\105.png" />
+    <BundleResource Include="Images\ModernThumbs\106.png" />
+    <BundleResource Include="Images\ModernThumbs\107.png" />
+    <BundleResource Include="Images\ModernThumbs\108.png" />
+    <BundleResource Include="Images\ModernThumbs\109.png" />
+    <BundleResource Include="Images\ModernThumbs\11.png" />
+    <BundleResource Include="Images\ModernThumbs\110.png" />
+    <BundleResource Include="Images\ModernThumbs\111.png" />
+    <BundleResource Include="Images\ModernThumbs\112.png" />
+    <BundleResource Include="Images\ModernThumbs\113.png" />
+    <BundleResource Include="Images\ModernThumbs\114.png" />
+    <BundleResource Include="Images\ModernThumbs\115.png" />
+    <BundleResource Include="Images\ModernThumbs\116.png" />
+    <BundleResource Include="Images\ModernThumbs\117.png" />
+    <BundleResource Include="Images\ModernThumbs\118.png" />
+    <BundleResource Include="Images\ModernThumbs\119.png" />
+    <BundleResource Include="Images\ModernThumbs\12.png" />
+    <BundleResource Include="Images\ModernThumbs\120.png" />
+    <BundleResource Include="Images\ModernThumbs\121.png" />
+    <BundleResource Include="Images\ModernThumbs\122.png" />
+    <BundleResource Include="Images\ModernThumbs\123.png" />
+    <BundleResource Include="Images\ModernThumbs\124.png" />
+    <BundleResource Include="Images\ModernThumbs\125.png" />
+    <BundleResource Include="Images\ModernThumbs\126.png" />
+    <BundleResource Include="Images\ModernThumbs\127.png" />
+    <BundleResource Include="Images\ModernThumbs\128.png" />
+    <BundleResource Include="Images\ModernThumbs\129.png" />
+    <BundleResource Include="Images\ModernThumbs\13.png" />
+    <BundleResource Include="Images\ModernThumbs\130.png" />
+    <BundleResource Include="Images\ModernThumbs\131.png" />
+    <BundleResource Include="Images\ModernThumbs\132.png" />
+    <BundleResource Include="Images\ModernThumbs\133.png" />
+    <BundleResource Include="Images\ModernThumbs\134.png" />
+    <BundleResource Include="Images\ModernThumbs\135.png" />
+    <BundleResource Include="Images\ModernThumbs\136.png" />
+    <BundleResource Include="Images\ModernThumbs\137.png" />
+    <BundleResource Include="Images\ModernThumbs\138.png" />
+    <BundleResource Include="Images\ModernThumbs\139.png" />
+    <BundleResource Include="Images\ModernThumbs\14.png" />
+    <BundleResource Include="Images\ModernThumbs\140.png" />
+    <BundleResource Include="Images\ModernThumbs\141.png" />
+    <BundleResource Include="Images\ModernThumbs\142.png" />
+    <BundleResource Include="Images\ModernThumbs\143.png" />
+    <BundleResource Include="Images\ModernThumbs\144.png" />
+    <BundleResource Include="Images\ModernThumbs\145.png" />
+    <BundleResource Include="Images\ModernThumbs\146.png" />
+    <BundleResource Include="Images\ModernThumbs\147.png" />
+    <BundleResource Include="Images\ModernThumbs\148.png" />
+    <BundleResource Include="Images\ModernThumbs\149.png" />
+    <BundleResource Include="Images\ModernThumbs\15.png" />
+    <BundleResource Include="Images\ModernThumbs\150.png" />
+    <BundleResource Include="Images\ModernThumbs\151.png" />
+    <BundleResource Include="Images\ModernThumbs\16.png" />
+    <BundleResource Include="Images\ModernThumbs\17.png" />
+    <BundleResource Include="Images\ModernThumbs\18.png" />
+    <BundleResource Include="Images\ModernThumbs\19.png" />
+    <BundleResource Include="Images\ModernThumbs\2.png" />
+    <BundleResource Include="Images\ModernThumbs\20.png" />
+    <BundleResource Include="Images\ModernThumbs\21.png" />
+    <BundleResource Include="Images\ModernThumbs\22.png" />
+    <BundleResource Include="Images\ModernThumbs\23.png" />
+    <BundleResource Include="Images\ModernThumbs\24.png" />
+    <BundleResource Include="Images\ModernThumbs\25.png" />
+    <BundleResource Include="Images\ModernThumbs\26.png" />
+    <BundleResource Include="Images\ModernThumbs\27.png" />
+    <BundleResource Include="Images\ModernThumbs\28.png" />
+    <BundleResource Include="Images\ModernThumbs\29.png" />
+    <BundleResource Include="Images\ModernThumbs\3.png" />
+    <BundleResource Include="Images\ModernThumbs\30.png" />
+    <BundleResource Include="Images\ModernThumbs\31.png" />
+    <BundleResource Include="Images\ModernThumbs\32.png" />
+    <BundleResource Include="Images\ModernThumbs\33.png" />
+    <BundleResource Include="Images\ModernThumbs\34.png" />
+    <BundleResource Include="Images\ModernThumbs\35.png" />
+    <BundleResource Include="Images\ModernThumbs\36.png" />
+    <BundleResource Include="Images\ModernThumbs\37.png" />
+    <BundleResource Include="Images\ModernThumbs\38.png" />
+    <BundleResource Include="Images\ModernThumbs\39.png" />
+    <BundleResource Include="Images\ModernThumbs\4.png" />
+    <BundleResource Include="Images\ModernThumbs\40.png" />
+    <BundleResource Include="Images\ModernThumbs\41.png" />
+    <BundleResource Include="Images\ModernThumbs\42.png" />
+    <BundleResource Include="Images\ModernThumbs\43.png" />
+    <BundleResource Include="Images\ModernThumbs\44.png" />
+    <BundleResource Include="Images\ModernThumbs\45.png" />
+    <BundleResource Include="Images\ModernThumbs\46.png" />
+    <BundleResource Include="Images\ModernThumbs\47.png" />
+    <BundleResource Include="Images\ModernThumbs\48.png" />
+    <BundleResource Include="Images\ModernThumbs\49.png" />
+    <BundleResource Include="Images\ModernThumbs\5.png" />
+    <BundleResource Include="Images\ModernThumbs\50.png" />
+    <BundleResource Include="Images\ModernThumbs\51.png" />
+    <BundleResource Include="Images\ModernThumbs\52.png" />
+    <BundleResource Include="Images\ModernThumbs\53.png" />
+    <BundleResource Include="Images\ModernThumbs\54.png" />
+    <BundleResource Include="Images\ModernThumbs\55.png" />
+    <BundleResource Include="Images\ModernThumbs\56.png" />
+    <BundleResource Include="Images\ModernThumbs\57.png" />
+    <BundleResource Include="Images\ModernThumbs\58.png" />
+    <BundleResource Include="Images\ModernThumbs\59.png" />
+    <BundleResource Include="Images\ModernThumbs\6.png" />
+    <BundleResource Include="Images\ModernThumbs\60.png" />
+    <BundleResource Include="Images\ModernThumbs\61.png" />
+    <BundleResource Include="Images\ModernThumbs\62.png" />
+    <BundleResource Include="Images\ModernThumbs\63.png" />
+    <BundleResource Include="Images\ModernThumbs\64.png" />
+    <BundleResource Include="Images\ModernThumbs\65.png" />
+    <BundleResource Include="Images\ModernThumbs\66.png" />
+    <BundleResource Include="Images\ModernThumbs\67.png" />
+    <BundleResource Include="Images\ModernThumbs\68.png" />
+    <BundleResource Include="Images\ModernThumbs\69.png" />
+    <BundleResource Include="Images\ModernThumbs\7.png" />
+    <BundleResource Include="Images\ModernThumbs\70.png" />
+    <BundleResource Include="Images\ModernThumbs\71.png" />
+    <BundleResource Include="Images\ModernThumbs\72.png" />
+    <BundleResource Include="Images\ModernThumbs\73.png" />
+    <BundleResource Include="Images\ModernThumbs\74.png" />
+    <BundleResource Include="Images\ModernThumbs\75.png" />
+    <BundleResource Include="Images\ModernThumbs\76.png" />
+    <BundleResource Include="Images\ModernThumbs\77.png" />
+    <BundleResource Include="Images\ModernThumbs\78.png" />
+    <BundleResource Include="Images\ModernThumbs\79.png" />
+    <BundleResource Include="Images\ModernThumbs\8.png" />
+    <BundleResource Include="Images\ModernThumbs\80.png" />
+    <BundleResource Include="Images\ModernThumbs\81.png" />
+    <BundleResource Include="Images\ModernThumbs\82.png" />
+    <BundleResource Include="Images\ModernThumbs\83.png" />
+    <BundleResource Include="Images\ModernThumbs\84.png" />
+    <BundleResource Include="Images\ModernThumbs\85.png" />
+    <BundleResource Include="Images\ModernThumbs\86.png" />
+    <BundleResource Include="Images\ModernThumbs\87.png" />
+    <BundleResource Include="Images\ModernThumbs\88.png" />
+    <BundleResource Include="Images\ModernThumbs\89.png" />
+    <BundleResource Include="Images\ModernThumbs\9.png" />
+    <BundleResource Include="Images\ModernThumbs\90.png" />
+    <BundleResource Include="Images\ModernThumbs\91.png" />
+    <BundleResource Include="Images\ModernThumbs\92.png" />
+    <BundleResource Include="Images\ModernThumbs\93.png" />
+    <BundleResource Include="Images\ModernThumbs\94.png" />
+    <BundleResource Include="Images\ModernThumbs\95.png" />
+    <BundleResource Include="Images\ModernThumbs\96.png" />
+    <BundleResource Include="Images\ModernThumbs\97.png" />
+    <BundleResource Include="Images\ModernThumbs\98.png" />
+    <BundleResource Include="Images\ModernThumbs\99.png" />
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadUnhandledDeviceExceptionPokeDexiOSHideInfoBar="True" TriggeredFromHotReload="False" />
+      <UserProperties XamarinHotReloadUnhandledDeviceExceptionPokeDexiOSHideInfoBar="True" TriggeredFromHotReload="False" XamarinHotReloadDebuggerTimeoutExceptionPokeDexiOSHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

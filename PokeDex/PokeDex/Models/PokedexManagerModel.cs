@@ -109,9 +109,14 @@ namespace PokeDex.Models
                 pkm.SpecialDefence = pokemon.Stats[4].BaseStat;
                 pkm.Speed = pokemon.Stats[5].BaseStat;
                 //pkm.LowResImageSource = pokemon.Sprites.FrontDefault;
-                pkm.OriginalImageSource = $"Images/Original/{pokemon.Id}.png";
-                pkm.LowResImageSource = $"Images/LowRes/{pokemon.Id}.png";
-                pkm.HighResImageSource = $"Images/HighRes/{pokemon.Id}.png";
+                pkm.RemasteredThumbImageSource = $"Images/RemasteredThumbs/{pokemon.Id}.png";
+                pkm.ModernThumbImageSource = $"Images/ModernThumbs/{pokemon.Id}.png";
+                pkm.FootprintsImageSource = $"Images/Footprints/{pokemon.Id}.png"; ;
+                pkm.GreenArtImageSource = $"Images/GreenArt/{pokemon.Id}.png";
+                pkm.BlueArtImageSource = $"Images/BlueArt/{pokemon.Id}.png";
+                pkm.ModernArtImageSource = $"Images/ModernArt/{pokemon.Id}.png";
+                pkm.CriesOriginalSoundSource = $"Images/CriesOriginal/{pokemon.Id}.ogg";
+                pkm.CriesModernSoundSource = $"Images/CriesModern/{pokemon.Id}.ogg";
 
                 await GetSpeciesInfo(pkm, pkmID);
             }
@@ -131,7 +136,8 @@ namespace PokeDex.Models
                 PokemonSpecies species = await pokeApi.GetResourceAsync<PokemonSpecies>(pkmID);
                 //pkm.species = new Species();
                 //pkm.species.Bio = Regex.Replace(species.FlavorTextEntries[0].Language , @"\n+", " ");
-                pkm.species.Bio = GetFlavourText(species);
+                pkm.species.Bio1 = GetFlavourText(species, "en", "red");
+                pkm.species.Bio2 = GetFlavourText(species, "en", "gold");
                 pkm.species.CaptureRate = species.CaptureRate;
                 pkm.species.Colour = species.Color.Name;
                 pkm.species.EggGroups = GetEggGroups(pkm.species.EggGroups, species);
@@ -186,13 +192,13 @@ namespace PokeDex.Models
             return list;
         }
 
-        public string GetFlavourText(PokemonSpecies species)
+        public string GetFlavourText(PokemonSpecies species, string Language, string Version)
         {
             string bio = string.Empty;
 
             foreach (var item in species.FlavorTextEntries)
             {
-                if (item.Language.Name.Equals("en"))
+                if (item.Language.Name.Equals(Language) && item.Version.Name.Equals(Version))
                 {
                     return Regex.Replace(item.FlavorText, @"\n", " ").Replace("\f", " ").Replace("\u000c", " ").Replace("POKéMON", "Pokémon");
                 }

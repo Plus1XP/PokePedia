@@ -10,12 +10,14 @@
 
     <ContentPage.Resources>
         <viewModels:ImageSourceConverter x:Key="ImageSourceConverter"/>
+        <viewModels:ElementTypeToColourConverter x:Key="ElementalTypeConverter"/>
     </ContentPage.Resources>
 
     <ContentPage.Content>
         <ScrollView>
             <ScrollView.GestureRecognizers>
-                <SwipeGestureRecognizer Direction="Right" Command="{Binding CloseDetail}"/>
+                <SwipeGestureRecognizer Direction="Right" Command="{Binding CloseDetailsCommand}"/>
+                <SwipeGestureRecognizer Direction="Left" Command="{Binding ShowAltEntryCommand}"/>
             </ScrollView.GestureRecognizers>
             
             <Grid >
@@ -39,32 +41,42 @@
                 <!--<Grid.GestureRecognizers>
                     <SwipeGestureRecognizer Direction="Right" Command="{Binding CloseDetail}"/>
                 </Grid.GestureRecognizers>-->
-                
+
+                <Image Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" Margin="20,0,0,0" Source="{Binding Footprints}"/>
+
                 <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" Text="{Binding Name}" FontSize="Title" FontAttributes="Bold"/>
 
                 <Label Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="End" Margin="0,0,20,0" Text="{Binding ID}" FontSize="Title" FontAttributes="Bold"/>
 
                 <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" Margin="0,0,0,30" Text="{Binding Genus}" FontSize="Caption"/>
                 
-                <Image Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center" Source="{Binding HighImage}" Aspect="Fill" HeightRequest="400" WidthRequest="400"/>
+                <Image Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center" Source="{Binding Image}"/>
                 
                 <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" Margin="15,30,15,0" Text="{Binding Bio}" LineBreakMode="WordWrap"/>
 
-                <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" Margin="15,5,15,30" Text="{Binding EggGroup}" FontSize="Caption" FontAttributes="Italic"/>
+                <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" Margin="15,5,15,15" Text="{Binding EggGroup}" FontSize="Caption" FontAttributes="Italic"/>
 
-                <StackLayout Grid.Row="5" Grid.Column="0" HorizontalOptions="Start" Margin="20,0,0,0" Orientation="Vertical">
+                <StackLayout Grid.Row="5" Grid.Column="0" Orientation="Vertical" HorizontalOptions="Start" Margin="20,0,0,0" Spacing="5">
                     <Label Text="{Binding Type_Header}" FontAttributes="Bold" FontSize="Large"/>
-                    <Label Text="{Binding Types[0]}" HorizontalOptions="Start" HorizontalTextAlignment="Center" BackgroundColor="{Binding TypeColour1_BackgroundColour}" WidthRequest="100"/>
-                    <Label Text="{Binding Types[1]}" HorizontalOptions="Start" HorizontalTextAlignment="Center" BackgroundColor="{Binding TypeColour2_BackgroundColour}" WidthRequest="100"/>
+                    <Frame CornerRadius="5" Padding="0" HasShadow="False" WidthRequest="100" Background="{Binding Types[0], Converter={StaticResource ElementalTypeConverter}}">
+                        <Label Text="{Binding Types[0]}" HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" />
+                    </Frame>
+                    <Frame CornerRadius="5" Padding="0" HasShadow="False" WidthRequest="100" Background="{Binding Types[1], Converter={StaticResource ElementalTypeConverter}}">
+                        <Label Text="{Binding Types[1]}" HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" />
+                    </Frame>
                 </StackLayout>
 
-                <StackLayout Grid.Row="5" Grid.Column="1" HorizontalOptions="End" Margin="0,0,20,0" Orientation="Vertical">
-                    <Label Text="{Binding Ability_Header}" FontAttributes="Bold" FontSize="Large"/>
-                    <Label Text="{Binding Abilities[0]}" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
-                    <Label Text="{Binding Abilities[1]}" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                <StackLayout Grid.Row="5" Grid.Column="1" Orientation="Vertical" HorizontalOptions="End" Margin="0,0,20,0" Spacing="5">
+                    <Label Text="{Binding Ability_Header}" HorizontalOptions="End" FontAttributes="Bold" FontSize="Large"/>
+                    <Frame CornerRadius="5" Padding="0" HasShadow="False" WidthRequest="150" Background="Gray">
+                        <Label Text="{Binding Abilities[0]}" HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" />
+                    </Frame>
+                    <Frame CornerRadius="5" Padding="0" HasShadow="False" WidthRequest="150" Background="Gray">
+                        <Label Text="{Binding Abilities[1]}" HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" />
+                    </Frame>
                 </StackLayout>
 
-                <chartForms:ChartView Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" HeightRequest="300" Chart="{Binding StatsChart}"/>
+                <chartForms:ChartView Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,20,0,0" HeightRequest="300" Chart="{Binding StatsChart}"/>
                 
                 <Grid Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Margin="20,20,20,0">
                     <Grid.RowDefinitions>

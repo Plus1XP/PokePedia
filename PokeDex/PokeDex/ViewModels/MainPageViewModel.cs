@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
+using System.Diagnostics;
+using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -17,43 +19,84 @@ namespace PokeDex.ViewModels
     class MainPageViewModel : INotifyPropertyChanged
     {
         private PokedexManagerModel pkmManager;
-        private DetailsPage detailsPageView;
-        private DetailsPageViewModel detailsPageViewModel;
 
         private DataManager dataManager;
 
+        private DetailsPage detailsPageView;
+        private DetailsPageViewModel detailsPageViewModel;
+
+        private ObservableCollection<PokedexModel> searchSuggestionsCollection;
+
         private int pkmToFind = 151;
+
+        private bool isSearchResultsListVisible = false;
+        private string logoPath = $"Images/Original/Logo.png";
 
         public MainPageViewModel()
         {
-            detailsPageView = new DetailsPage();
-            detailsPageViewModel = new DetailsPageViewModel();
             pkmManager = new PokedexManagerModel();
 
             dataManager = new DataManager();
 
-            OnSearch = new AsyncRelayCommand(() => OnLoadPokemonList(pkmToFind));
+            detailsPageView = new DetailsPage();
+            detailsPageViewModel = new DetailsPageViewModel();
 
-            IsTapped = new Command<PokedexModel>(async p => await ItemTapped(p));
+            RefreshDataBaseCommand = new Command(async () => await LoadPokemonList(pkmToFind));
 
-            OnClearData = new Command(ClearData);
+            PerformSearchCommand = new Command<string>((string query) => { SearchSuggestionsCollection = GetSearchResults(query ?? string.Empty); });
 
-            OnSearch.Execute(null);
+            ItemTappedCommand = new Command<PokedexModel>(async p => await ItemTapped(p));
+
+            GridFocusedCommand = new Command(SetSearchBarFocus);
+
+            ClearDataCommand = new Command(ClearData);
+
+            RefreshDataBaseCommand.Execute(null);
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public Command RefreshDataBaseCommand { get; }
 
-        public AsyncRelayCommand OnSearch { get; private set; }
+        public Command<PokedexModel> ItemTappedCommand { get; }
 
-        public Command<PokedexModel> IsTapped { get; private set; }
+        public Command GridFocusedCommand { get; }
 
-        public Command OnClearData { get; private set; }
+        public Command ClearDataCommand { get; }
+
+        public Command<string> PerformSearchCommand { get; }
 
         public ObservableCollection<PokedexModel> pkmList { get; private set; }
 
-        public string Search_Header { get; private set; } = "Search";
+        public ObservableCollection<PokedexModel> SearchSuggestionsCollection
+        {
+            get
+            {
+                return searchSuggestionsCollection;
+            }
+            set
+            {
+                searchSuggestionsCollection = value;
+                OnPropertChanged("SearchSuggestionsCollection");
+            }
+        }
 
-        public string Logo { get; private set; } = $"Images/Original/Logo.png";
+        public bool IsSearchResultsListVisible
+        {
+            get
+            {
+                return isSearchResultsListVisible;
+            }
+            set
+            {
+                isSearchResultsListVisible = value;
+                OnPropertChanged("IsSearchResultsListVisible");
+            }
+        }
+
+        public string SearchBoxPlaceHolder { get; private set; } = "Search Pokemon";
+
+        public string Logo_Header => logoPath;
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         private void OnPropertChanged(string property)
         {
@@ -63,7 +106,22 @@ namespace PokeDex.ViewModels
             }
         }
 
-        public async Task OnLoadPokemonList(int pkmToFind)
+        private ObservableCollection<PokedexModel> GetSearchResults(string query)
+        {
+            if (query.Length >= 1)
+            {
+                IsSearchResultsListVisible = true;
+                //return new ObservableCollection<PokedexModel>(pkmList.Where(p => p.Name.ToLower().StartsWith(query.ToLower())));
+                return new ObservableCollection<PokedexModel>(pkmList.Where(p => p.Name.ToLower().Contains(query.ToLower())));
+            }
+            else
+            {
+                IsSearchResultsListVisible = false;
+                return new ObservableCollection<PokedexModel>();
+            }
+        }
+
+        private async Task LoadPokemonList(int pkmToFind)
         {
             pkmList = new ObservableCollection<PokedexModel>(await dataManager.LoadPokemonDataList(pkmToFind));
             OnPropertChanged(null);
@@ -74,12 +132,19 @@ namespace PokeDex.ViewModels
             MessagingCenter.Send<MainPageViewModel, PokedexModel>(this, "Send_Selected_Pokemon", pkm);
             detailsPageView.BindingContext = detailsPageViewModel;
             await Application.Current.MainPage.Navigation.PushAsync(detailsPageView);
+            IsSearchResultsListVisible = false;
+        }
+
+        private void SetSearchBarFocus()
+        {
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            Debug.WriteLine($"Keyboard Dismissed");
         }
 
         private void ClearData()
         {
             dataManager.RemovePokemonDataFile();
-            OnSearch.Execute(null);
+            RefreshDataBaseCommand.Execute(null);
         }
     }
 }

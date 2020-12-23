@@ -20,16 +20,58 @@ namespace PokeDex.ViewModels
         PokemonCharts chart;
         ElementalColours pkmColour;
 
+        private bool isShowingAltImage;
+        private bool isShowingAltBio;
+
+
         public DetailsPageViewModel()
         {
+            isShowingAltImage = false;
+            isShowingAltBio = false;
             pkmColour = new ElementalColours();
             MessagingCenter.Subscribe<MainPageViewModel, PokedexModel>(this, "Send_Selected_Pokemon", (sender, args) => { UpdatePokemonDetails(args); });
-            CloseDetail = new Command(async () => await OnDetailsClosed());
+            ShowAltEntryCommand = new Command(ShowAltEntry);
+            CloseDetailsCommand = new Command(async () => await OnDetailsClosed());
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public Command CloseDetail { get; set; }
+        public Command ShowAltEntryCommand { get; set; }
+        public Command CloseDetailsCommand { get; set; }
+
+        public bool IsShowingAltImage
+        {
+            get
+            {
+                return isShowingAltImage;
+            }
+            set
+            {
+                isShowingAltImage = value;
+                OnPropertChanged("IsShowingAltImage");
+            }
+        }
+
+        public bool IsShowingAltBio
+        {
+            get
+            {
+                return isShowingAltBio;
+            }
+            set
+            {
+                isShowingAltBio = value;
+                OnPropertChanged("IsShowingAltBio");
+            }
+        }
+
+        public string MainImage { get; set; }
+
+        public string AltImage { get; set; }
+
+        public string MainBio { get; set; }
+
+        public string AltBio { get; set; }
 
         public string TypeColour1_BackgroundColour { get; private set; }
 
@@ -96,7 +138,11 @@ namespace PokeDex.ViewModels
 
         public string EggGroup { get; private set; }
 
-        public string HighImage { get; private set; }
+        public string Image { get; private set; }
+
+        public string Footprints { get; set; }
+
+        public string Cry { get; private set; }
 
         public Chart StatsChart { get; set; }
 
@@ -113,6 +159,9 @@ namespace PokeDex.ViewModels
             SetHeaders();
 
             SetPokemonValues(pkm);
+            SetMainImage();
+
+            SetMainBio();
 
             SetTypeColour();
 
@@ -151,7 +200,6 @@ namespace PokeDex.ViewModels
             SpecialDefence = pkm.SpecialDefence;
             Speed = pkm.Speed;
             Genus = pkm.species.Genus;
-            Bio = pkm.species.Bio;
             EggGroups = pkm.species.EggGroups;
             Shape = pkm.species.Shape;
             Colour = pkm.species.Colour;
@@ -159,7 +207,14 @@ namespace PokeDex.ViewModels
             GrowthRate = pkm.species.GrowthRate;
             CaptureRate = pkm.species.CaptureRate;
             Generation = pkm.species.Generation;
-            HighImage = pkm.HighResImageSource;
+            Footprints = pkm.FootprintsImageSource;
+            Cry = pkm.CriesOriginalSoundSource;
+
+            MainBio = pkm.species.Bio1;
+            AltBio = pkm.species.Bio2;
+
+            MainImage = pkm.BlueArtImageSource;
+            AltImage = pkm.GreenArtImageSource;
 
             EggGroup = $"*This Pokémon belongs to the following Egg Group:\n{GetEggGroups(EggGroups).Item1} {GetEggGroups(EggGroups).Item2}";
         }
@@ -197,6 +252,42 @@ namespace PokeDex.ViewModels
             {
                 return Tuple.Create(eggGroup[0], eggGroup[1]);
             }
+        }
+
+        private void SetMainImage()
+        {
+            if (!IsShowingAltImage)
+            {
+                Image = MainImage;
+            }
+            else
+            {
+                Image = AltImage;
+            }
+
+            OnPropertChanged("Image");
+        }
+
+        private void SetMainBio()
+        {
+            if (!IsShowingAltBio)
+            {
+                Bio = MainBio;
+            }
+            else
+            {
+                Bio = AltBio;
+            }
+
+            OnPropertChanged("Bio");
+        }
+
+        private void ShowAltEntry()
+        {
+            IsShowingAltImage = !IsShowingAltImage;
+            IsShowingAltBio = !IsShowingAltBio;
+            SetMainImage();
+            SetMainBio();
         }
 
         private async Task OnDetailsClosed()
