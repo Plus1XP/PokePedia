@@ -41,7 +41,7 @@
 
                 <Image Grid.Column="0" Scale="0.6" Source="{Binding Logo_Header}" HorizontalOptions="Start" BackgroundColor="White">
                     <Image.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding ClearDataCommand}" NumberOfTapsRequired="1"/>
+                        <TapGestureRecognizer Command="{Binding ShowAboutCommand}" NumberOfTapsRequired="1"/>
                     </Image.GestureRecognizers>
                 </Image>
                 <SearchBar Grid.Column="1" x:Name="PokemonSearchBar" Placeholder="{Binding SearchBoxPlaceHolder}" HorizontalOptions="Start" BackgroundColor="White" IsSpellCheckEnabled="False"

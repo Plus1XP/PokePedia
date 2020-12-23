@@ -32,6 +32,8 @@ namespace PokeDex.ViewModels
 
         private string logoPath;
 
+        private string aboutText;
+
         private bool isRefrshing;
 
         private bool isSearchResultsListVisible;
@@ -41,6 +43,8 @@ namespace PokeDex.ViewModels
             pkmToFind = 151;
 
             logoPath = $"Images/Original/Logo.png";
+
+            aboutText = "PokePedia\nv.0.1.1\nhttps://github.com/aleuts";
 
             isRefrshing = false;
 
@@ -64,6 +68,8 @@ namespace PokeDex.ViewModels
 
             ClearDataCommand = new Command(ClearData);
 
+            ShowAboutCommand = new Command(async () => await ShowAbout());
+
             RefreshDataBaseCommand.Execute(null);
         }
 
@@ -74,6 +80,8 @@ namespace PokeDex.ViewModels
         public Command GridFocusedCommand { get; }
 
         public Command ClearDataCommand { get; }
+
+        public Command ShowAboutCommand { get; }
 
         public Command<string> PerformSearchCommand { get; }
 
@@ -166,6 +174,11 @@ namespace PokeDex.ViewModels
         {
             DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
             Debug.WriteLine($"Keyboard Dismissed");
+        }
+
+        private async Task ShowAbout()
+        {
+            await Application.Current.MainPage.DisplayAlert("About", aboutText, "OK");
         }
 
         private void ClearData()
