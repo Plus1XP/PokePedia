@@ -20,6 +20,11 @@
 
     <ContentPage.Content>
         <Grid>
+            
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding GridFocusedCommand}" NumberOfTapsRequired="1"/>
+            </Grid.GestureRecognizers>
+            
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>

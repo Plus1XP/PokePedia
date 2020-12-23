@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -46,6 +47,8 @@ namespace PokeDex.ViewModels
 
             ItemTappedCommand = new Command<PokedexModel>(async p => await ItemTapped(p));
 
+            GridFocusedCommand = new Command(SetSearchBarFocus);
+
             ClearDataCommand = new Command(ClearData);
 
             RefreshDataBaseCommand.Execute(null);
@@ -54,6 +57,8 @@ namespace PokeDex.ViewModels
         public Command RefreshDataBaseCommand { get; }
 
         public Command<PokedexModel> ItemTappedCommand { get; }
+
+        public Command GridFocusedCommand { get; }
 
         public Command ClearDataCommand { get; }
 
@@ -128,7 +133,13 @@ namespace PokeDex.ViewModels
             detailsPageView.BindingContext = detailsPageViewModel;
             await Application.Current.MainPage.Navigation.PushAsync(detailsPageView);
             IsSearchResultsListVisible = false;
-        }      
+        }
+
+        private void SetSearchBarFocus()
+        {
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            Debug.WriteLine($"Keyboard Dismissed");
+        }
 
         private void ClearData()
         {
