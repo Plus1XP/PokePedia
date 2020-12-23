@@ -18,11 +18,6 @@
         <viewModels:MainPageViewModel/>
     </ContentPage.BindingContext>
 
-    <ContentPage.Resources>
-        <viewModels:ImageSourceConverter x:Key="ImageSourceConverter"/>
-        <viewModels:ElementTypeToColourConverter x:Key="ElementalTypeConverter"/>
-    </ContentPage.Resources>
-
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -59,81 +54,16 @@
                 </SearchBar>
             </Grid>
 
-            <ListView Grid.Row="1" Grid.Column="0" x:Name="PokeDexList" ItemsSource="{Binding pkmList}" SeparatorVisibility="None">
+            <ListView Grid.Row="1" Grid.Column="0" x:Name="PokeDexList" Style="{StaticResource Key=PokedexList}" ItemsSource="{Binding pkmList}">
                 <ListView.Behaviors>
                     <viewModels:ItemTappedBehaviour Command="{Binding ItemTappedCommand}" CommandParameter="{Binding Source={x:Reference PokeDexList}, Path=SelectedItem}"/>
                 </ListView.Behaviors>
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid Margin="10,0,10,0" ColumnSpacing="20">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="auto"/>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="auto"/>
-                                </Grid.ColumnDefinitions>
-
-                                <Label Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding ID}"/>
-
-                                <Image Grid.Row="0" Grid.Column="1" Source="{Binding OriginalImageSource}" Aspect="Fill" HeightRequest="45" WidthRequest="45"/>
-
-                                <Label Grid.Row="0" Grid.Column="2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Header" Text="{Binding Name}"/>
-
-                                <StackLayout Grid.Row="0" Grid.Column="3" Orientation="Horizontal" VerticalOptions="Center" Spacing="5">
-                                    <Frame CornerRadius="5" Padding="0" HasShadow="False" WidthRequest="80" Background="{Binding Types[0], Converter={StaticResource ElementalTypeConverter}}">
-                                        <Label HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" Text="{Binding Types[0]}"/>
-                                    </Frame>
-                                    <Frame CornerRadius="5" Padding="0" HasShadow="False" WidthRequest="80" Background="{Binding Types[1], Converter={StaticResource ElementalTypeConverter}}">
-                                        <Label HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" Text="{Binding Types[1]}"/>
-                                    </Frame>
-                                </StackLayout>
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
             </ListView>
 
-            <ListView Grid.Row="1" Grid.Column="0" x:Name="SearchResultsList" ItemsSource="{Binding SearchSuggestionsCollection}" SeparatorVisibility="None" IsVisible="{Binding IsSearchResultsListVisible}">
+            <ListView Grid.Row="1" Grid.Column="0" x:Name="SearchResultsList" Style="{StaticResource Key=PokedexList}" ItemsSource="{Binding SearchSuggestionsCollection}" IsVisible="{Binding IsSearchResultsListVisible}">
                 <ListView.Behaviors>
                     <viewModels:ItemTappedBehaviour Command="{Binding ItemTappedCommand}" CommandParameter="{Binding Source={x:Reference SearchResultsList}, Path=SelectedItem}"/>
                 </ListView.Behaviors>
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid Margin="10,0,10,0" ColumnSpacing="20">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="auto"/>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="auto"/>
-                                </Grid.ColumnDefinitions>
-
-                                <Label Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding ID}"/>
-
-                                <Image Grid.Row="0" Grid.Column="1" Source="{Binding OriginalImageSource}" Aspect="Fill" HeightRequest="45" WidthRequest="45"/>
-
-                                <Label Grid.Row="0" Grid.Column="2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Header" Text="{Binding Name}"/>
-
-                                <StackLayout Grid.Row="0" Grid.Column="3" Orientation="Horizontal" VerticalOptions="Center" Spacing="5">
-                                    <Frame CornerRadius="5" Padding="0" HasShadow="False" WidthRequest="80" Background="{Binding Types[0], Converter={StaticResource ElementalTypeConverter}}">
-                                        <Label HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" Text="{Binding Types[0]}"/>
-                                    </Frame>
-                                    <Frame CornerRadius="5" Padding="0" HasShadow="False" WidthRequest="80" Background="{Binding Types[1], Converter={StaticResource ElementalTypeConverter}}">
-                                        <Label HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" Text="{Binding Types[1]}"/>
-                                    </Frame>
-                                </StackLayout>
-
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
             </ListView>
 
         </Grid>
