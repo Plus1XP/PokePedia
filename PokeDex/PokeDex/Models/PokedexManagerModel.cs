@@ -109,9 +109,14 @@ namespace PokeDex.Models
                 pkm.SpecialDefence = pokemon.Stats[4].BaseStat;
                 pkm.Speed = pokemon.Stats[5].BaseStat;
                 //pkm.LowResImageSource = pokemon.Sprites.FrontDefault;
-                pkm.OriginalImageSource = $"Images/Original/{pokemon.Id}.png";
-                pkm.LowResImageSource = $"Images/LowRes/{pokemon.Id}.png";
-                pkm.HighResImageSource = $"Images/HighRes/{pokemon.Id}.png";
+                pkm.RemasteredThumbImageSource = $"Images/RemasteredThumbs/{pokemon.Id}.png";
+                pkm.ModernThumbImageSource = $"Images/ModernThumbs/{pokemon.Id}.png";
+                pkm.FootprintsImageSource = $"Images/Footprints/{pokemon.Id}.png"; ;
+                pkm.GreenArtImageSource = $"Images/GreenArt/{pokemon.Id}.png";
+                pkm.BlueArtImageSource = $"Images/BlueArt/{pokemon.Id}.png";
+                pkm.ModernArtImageSource = $"Images/ModernArt/{pokemon.Id}.png";
+                pkm.CriesOriginalSoundSource = $"Images/CriesOriginal/{pokemon.Id}.ogg";
+                pkm.CriesModernSoundSource = $"Images/CriesModern/{pokemon.Id}.ogg";
 
                 await GetSpeciesInfo(pkm, pkmID);
             }

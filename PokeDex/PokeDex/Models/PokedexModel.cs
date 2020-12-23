@@ -19,9 +19,14 @@ namespace PokeDex.Models
         public int SpecialAttack { get; set; }
         public int SpecialDefence { get; set; }
         public int Speed { get; set; }
-        public string OriginalImageSource { get; set; }
-        public string LowResImageSource { get; set; }
-        public string HighResImageSource { get; set; }
+        public string FootprintsImageSource { get; set; }
+        public string RemasteredThumbImageSource { get; set; }
+        public string ModernThumbImageSource { get; set; }
+        public string GreenArtImageSource { get; set; }
+        public string BlueArtImageSource { get; set; }
+        public string ModernArtImageSource { get; set; }
+        public string CriesOriginalSoundSource { get; set; }
+        public string CriesModernSoundSource { get; set; }
 
         public Species species { get; set; } = new Species();
     }
