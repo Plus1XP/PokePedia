@@ -20,11 +20,11 @@
 
     <ContentPage.Content>
         <Grid>
-            
+
             <Grid.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding GridFocusedCommand}" NumberOfTapsRequired="1"/>
             </Grid.GestureRecognizers>
-            
+
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
@@ -59,11 +59,13 @@
                 </SearchBar>
             </Grid>
 
-            <ListView Grid.Row="1" Grid.Column="0" x:Name="PokeDexList" Style="{StaticResource Key=PokedexList}" ItemsSource="{Binding pkmList}">
-                <ListView.Behaviors>
-                    <viewModels:ItemTappedBehaviour Command="{Binding ItemTappedCommand}" CommandParameter="{Binding Source={x:Reference PokeDexList}, Path=SelectedItem}"/>
-                </ListView.Behaviors>
-            </ListView>
+            <RefreshView Grid.Row="1" Grid.Column="0" IsEnabled="True" IsRefreshing="{Binding IsRefreshing}" Command="{Binding ClearDataCommand}">
+                <ListView x:Name="PokeDexList" Style="{StaticResource Key=PokedexList}" ItemsSource="{Binding pkmList}">
+                    <ListView.Behaviors>
+                        <viewModels:ItemTappedBehaviour Command="{Binding ItemTappedCommand}" CommandParameter="{Binding Source={x:Reference PokeDexList}, Path=SelectedItem}"/>
+                    </ListView.Behaviors>
+                </ListView>
+            </RefreshView>
 
             <ListView Grid.Row="1" Grid.Column="0" x:Name="SearchResultsList" Style="{StaticResource Key=PokedexList}" ItemsSource="{Binding SearchSuggestionsCollection}" IsVisible="{Binding IsSearchResultsListVisible}">
                 <ListView.Behaviors>
