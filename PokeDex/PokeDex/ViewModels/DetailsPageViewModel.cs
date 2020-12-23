@@ -159,6 +159,7 @@ namespace PokeDex.ViewModels
             SetHeaders();
 
             SetPokemonValues(pkm);
+
             SetMainImage();
 
             SetMainBio();
