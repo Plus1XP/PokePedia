@@ -42,11 +42,7 @@
                     <SwipeGestureRecognizer Direction="Right" Command="{Binding CloseDetail}"/>
                 </Grid.GestureRecognizers>-->
 
-                <Image Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" Margin="20,0,0,0" Source="{Binding Footprints}" BackgroundColor="Yellow">
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding ShowAltEntryCommand}" NumberOfTapsRequired="1"/>
-                    </Image.GestureRecognizers>
-                </Image>
+                <Image Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" Margin="20,0,0,0" Source="{Binding Footprints}"/>
 
                 <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" Text="{Binding Name}" FontSize="Title" FontAttributes="Bold"/>
 

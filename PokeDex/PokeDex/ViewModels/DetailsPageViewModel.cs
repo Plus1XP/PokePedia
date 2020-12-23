@@ -31,14 +31,12 @@ namespace PokeDex.ViewModels
             pkmColour = new ElementalColours();
             MessagingCenter.Subscribe<MainPageViewModel, PokedexModel>(this, "Send_Selected_Pokemon", (sender, args) => { UpdatePokemonDetails(args); });
             ShowAltEntryCommand = new Command(ShowAltEntry);
-            PlayCryCommand = new Command(PlayCry);
             CloseDetailsCommand = new Command(async () => await OnDetailsClosed());
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         public Command ShowAltEntryCommand { get; set; }
-        public Command PlayCryCommand { get; set; }
         public Command CloseDetailsCommand { get; set; }
 
         public bool IsShowingAltImage
@@ -161,7 +159,6 @@ namespace PokeDex.ViewModels
             SetHeaders();
 
             SetPokemonValues(pkm);
-
             SetMainImage();
 
             SetMainBio();
@@ -291,11 +288,6 @@ namespace PokeDex.ViewModels
             IsShowingAltBio = !IsShowingAltBio;
             SetMainImage();
             SetMainBio();
-        }
-
-        private void PlayCry()
-        {
-            // Find Audio Player
         }
 
         private async Task OnDetailsClosed()
