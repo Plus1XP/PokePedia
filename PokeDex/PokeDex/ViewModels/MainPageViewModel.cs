@@ -23,22 +23,35 @@ namespace PokeDex.ViewModels
         private DataManager dataManager;
 
         private DetailsPage detailsPageView;
+
         private DetailsPageViewModel detailsPageViewModel;
 
         private ObservableCollection<PokedexModel> searchSuggestionsCollection;
 
-        private int pkmToFind = 151;
+        private int pkmToFind;
 
-        private bool isSearchResultsListVisible = false;
-        private string logoPath = $"Images/Original/Logo.png";
+        private string logoPath;
+
+        private bool isRefrshing;
+
+        private bool isSearchResultsListVisible;
 
         public MainPageViewModel()
         {
+            pkmToFind = 151;
+
+            logoPath = $"Images/Original/Logo.png";
+
+            isRefrshing = false;
+
+            isSearchResultsListVisible = false;
+
             pkmManager = new PokedexManagerModel();
 
             dataManager = new DataManager();
 
             detailsPageView = new DetailsPage();
+
             detailsPageViewModel = new DetailsPageViewModel();
 
             RefreshDataBaseCommand = new Command(async () => await LoadPokemonList(pkmToFind));
@@ -92,6 +105,19 @@ namespace PokeDex.ViewModels
             }
         }
 
+        public bool IsRefreshing
+        {
+            get
+            {
+                return isRefrshing;
+            }
+            set
+            {
+                isRefrshing = value;
+                OnPropertChanged("IsRefreshing");
+            }
+        }
+
         public string SearchBoxPlaceHolder { get; private set; } = "Search Pokemon";
 
         public string Logo_Header => logoPath;
@@ -125,6 +151,7 @@ namespace PokeDex.ViewModels
         {
             pkmList = new ObservableCollection<PokedexModel>(await dataManager.LoadPokemonDataList(pkmToFind));
             OnPropertChanged(null);
+            IsRefreshing = false;
         }
 
         private async Task ItemTapped(PokedexModel pkm)
@@ -143,6 +170,7 @@ namespace PokeDex.ViewModels
 
         private void ClearData()
         {
+            IsRefreshing = true;
             dataManager.RemovePokemonDataFile();
             RefreshDataBaseCommand.Execute(null);
         }
