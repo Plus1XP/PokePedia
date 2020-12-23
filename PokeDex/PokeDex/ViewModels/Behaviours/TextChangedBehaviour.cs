@@ -5,7 +5,7 @@ using System.Windows.Input;
 
 using Xamarin.Forms;
 
-namespace PokeDex.ViewModels
+namespace PokeDex.ViewModels.Behaviours
 {
     class TextChangedBehaviour : Behavior<SearchBar>
     {

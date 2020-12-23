@@ -6,7 +6,7 @@ using System.Net;
 using System.Text;
 using Xamarin.Forms;
 
-namespace PokeDex.ViewModels
+namespace PokeDex.ViewModels.Converters
 {
     public class ImageSourceConverter : IValueConverter
     {

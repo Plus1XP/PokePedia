@@ -7,7 +7,7 @@ using System.Text;
 
 using Xamarin.Forms;
 
-namespace PokeDex.ViewModels
+namespace PokeDex.ViewModels.Converters
 {
     class ElementTypeToColourConverter : IValueConverter
     {
