@@ -22,9 +22,9 @@
     <ContentPage.Content>
         <Grid>
 
-            <Grid.GestureRecognizers>
+            <!--<Grid.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding GridFocusedCommand}" NumberOfTapsRequired="1"/>
-            </Grid.GestureRecognizers>
+            </Grid.GestureRecognizers>-->
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
