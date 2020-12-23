@@ -36,7 +36,8 @@ namespace PokeDex.Models
         public int CaptureRate { get; set; }
         public string Colour { get; set; }
         public List<string> EggGroups { get; set; }
-        public string Bio { get; set; }
+        public string Bio1 { get; set; }
+        public string Bio2 { get; set; }
         public string Genus { get; set; }
         public string Generation { get; set; }
         public string GrowthRate { get; set; }
