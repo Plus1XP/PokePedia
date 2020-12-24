@@ -1,15 +1,12 @@
-﻿using System;
+﻿using PokeApiNet;
+
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-
-using PokeApiNet;
-
-using Xamarin.Forms;
 
 namespace PokeDex.Models
 {
@@ -109,15 +106,12 @@ namespace PokeDex.Models
                 pkm.SpecialDefence = pokemon.Stats[4].BaseStat;
                 pkm.Speed = pokemon.Stats[5].BaseStat;
                 //pkm.LowResImageSource = pokemon.Sprites.FrontDefault;
-                pkm.RemasteredThumbImageSource = $"Images/RemasteredThumbs/{pokemon.Id}.png";
-                pkm.ModernThumbImageSource = $"Images/ModernThumbs/{pokemon.Id}.png";
-                pkm.FootprintsImageSource = $"Images/Footprints/{pokemon.Id}.png"; ;
-                pkm.GreenArtImageSource = $"Images/GreenArt/{pokemon.Id}.png";
-                pkm.BlueArtImageSource = $"Images/BlueArt/{pokemon.Id}.png";
-                pkm.ModernArtImageSource = $"Images/ModernArt/{pokemon.Id}.png";
-                pkm.CriesOriginalSoundSource = $"Images/CriesOriginal/{pokemon.Id}.ogg";
-                pkm.CriesModernSoundSource = $"Images/CriesModern/{pokemon.Id}.ogg";
-
+                pkm.RemasteredThumbImageSource = $"Data/RemasteredThumbs/{pokemon.Id}.png";
+                pkm.ModernThumbImageSource = $"Data/ModernThumbs/{pokemon.Id}.png";
+                pkm.FootprintsImageSource = $"Data/Footprints/{pokemon.Id}.png"; ;
+                pkm.GreenArtImageSource = $"Data/GreenArt/{pokemon.Id}.png";
+                pkm.BlueArtImageSource = $"Data/BlueArt/{pokemon.Id}.png";
+                pkm.ModernArtImageSource = $"Data/ModernArt/{pokemon.Id}.png";
                 await GetSpeciesInfo(pkm, pkmID);
             }
             catch (Exception ex)
@@ -196,7 +190,7 @@ namespace PokeDex.Models
         {
             string bio = string.Empty;
 
-            foreach (var item in species.FlavorTextEntries)
+            foreach (PokemonSpeciesFlavorTexts item in species.FlavorTextEntries)
             {
                 if (item.Language.Name.Equals(Language) && item.Version.Name.Equals(Version))
                 {

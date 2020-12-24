@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Net;
-using System.Text;
+
 using Xamarin.Forms;
 
-namespace PokeDex.ViewModels
+namespace PokeDex.ViewModels.Converters
 {
     public class ImageSourceConverter : IValueConverter
     {
@@ -19,7 +18,7 @@ namespace PokeDex.ViewModels
                 return null;
             }
 
-            var byteArray = Client.DownloadData(value.ToString());
+            byte[] byteArray = Client.DownloadData(value.ToString());
 
             return ImageSource.FromStream(() => new MemoryStream(byteArray));
         }

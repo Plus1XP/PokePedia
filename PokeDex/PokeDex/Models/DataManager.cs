@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace PokeDex.Models
@@ -22,7 +20,7 @@ namespace PokeDex.Models
             pokedexManager = new PokedexManagerModel();
 
             folderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            dataFileName = "PkmDB.json";
+            dataFileName = "PkmDB";
             fileLocation = Path.Combine(folderPath, dataFileName);
         }
 

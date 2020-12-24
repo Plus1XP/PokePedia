@@ -1,16 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows.Input;
 
 using Xamarin.Forms;
 
-namespace PokeDex.ViewModels
+namespace PokeDex.ViewModels.Behaviours
 {
-    public class ItemSelectedBehaviour : Behavior<ListView>
+    public class ItemTappedBehaviour :Behavior<ListView>
     {
         public static readonly BindableProperty CommandProperty =
-            BindableProperty.Create(propertyName: "Command", returnType: typeof(ICommand), declaringType: typeof(ItemSelectedBehaviour));
+            BindableProperty.Create(propertyName: "Command", returnType: typeof(ICommand), declaringType: typeof(ItemTappedBehaviour));
 
         public static readonly BindableProperty CommandParameterProperty =
             BindableProperty.Create(propertyName: "CommandParameter", returnType: typeof(object), declaringType: typeof(ItemSelectedBehaviour));
@@ -30,21 +28,22 @@ namespace PokeDex.ViewModels
         protected override void OnAttachedTo(ListView bindable)
         {
             base.OnAttachedTo(bindable);
-            bindable.ItemSelected += BindableOnItemSelected;
+            bindable.ItemTapped += BindableOnItemTapped;
             bindable.BindingContextChanged += BindableOnBindingContextChanged;
-
         }
 
         protected override void OnDetachingFrom(ListView bindable)
         {
             base.OnDetachingFrom(bindable);
-            bindable.ItemSelected -= BindableOnItemSelected;
-            bindable.ItemSelected -= BindableOnBindingContextChanged;
+            bindable.ItemTapped -= BindableOnItemTapped;
+            bindable.ItemTapped -= BindableOnBindingContextChanged;
         }
 
-        private void BindableOnItemSelected(object sender, SelectedItemChangedEventArgs itemTappedEventArgs)
+        private void BindableOnItemTapped(object sender, ItemTappedEventArgs itemTappedEventArgs)
         {
+            ListView listView = sender as ListView;
             Command.Execute(CommandParameter);
+            listView.SelectedItem = null;
         }
 
         private void BindableOnBindingContextChanged(object sender, EventArgs eventArgs)

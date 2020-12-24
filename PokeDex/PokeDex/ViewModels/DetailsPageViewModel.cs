@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
-using System.Threading.Tasks;
-
-using Microcharts;
-
-using SkiaSharp;
+﻿using Microcharts;
 
 using PokeDex.Models;
+using PokeDex.Views;
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Threading.Tasks;
 
 using Xamarin.Forms;
-using PokeDex.Views;
 
 namespace PokeDex.ViewModels
 {
@@ -142,8 +139,6 @@ namespace PokeDex.ViewModels
 
         public string Footprints { get; set; }
 
-        public string Cry { get; private set; }
-
         public Chart StatsChart { get; set; }
 
         private void OnPropertChanged(string property)
@@ -209,7 +204,6 @@ namespace PokeDex.ViewModels
             CaptureRate = pkm.species.CaptureRate;
             Generation = pkm.species.Generation;
             Footprints = pkm.FootprintsImageSource;
-            Cry = pkm.CriesOriginalSoundSource;
 
             MainBio = pkm.species.Bio1;
             AltBio = pkm.species.Bio2;

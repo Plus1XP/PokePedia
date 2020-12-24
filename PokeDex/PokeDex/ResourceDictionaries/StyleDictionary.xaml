@@ -2,10 +2,10 @@
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                     x:Class="PokeDex.ResourceDictionaries.StyleDictionary"
-                    xmlns:viewModels="clr-namespace:PokeDex.ViewModels">
+                    xmlns:converters="clr-namespace:PokeDex.ViewModels.Converters">
 
-    <viewModels:ImageSourceConverter x:Key="ImageSourceConverter"/>
-    <viewModels:ElementTypeToColourConverter x:Key="ElementalTypeConverter"/>
+    <converters:ImageSourceConverter x:Key="ImageSourceConverter"/>
+    <converters:ElementTypeToColourConverter x:Key="ElementalTypeConverter"/>
 
     <Style TargetType="ListView" x:Key="PokedexList">
         <Setter Property="SeparatorVisibility" Value="None"/>

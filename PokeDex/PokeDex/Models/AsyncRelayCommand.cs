@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -32,8 +30,8 @@ namespace PokeDex.Models
 
         public async void Execute(object parameter)
         {
-            this.isExecuting = true;
-            this.OnCanExecuteChanged();
+            isExecuting = true;
+            OnCanExecuteChanged();
 
             try
             {
@@ -41,8 +39,8 @@ namespace PokeDex.Models
             }
             finally
             {
-                this.isExecuting = false;
-                this.OnCanExecuteChanged();
+                isExecuting = false;
+                OnCanExecuteChanged();
             }
         }
 
