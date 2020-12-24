@@ -1,15 +1,12 @@
-﻿using System;
+﻿using PokeApiNet;
+
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-
-using PokeApiNet;
-
-using Xamarin.Forms;
 
 namespace PokeDex.Models
 {
@@ -193,7 +190,7 @@ namespace PokeDex.Models
         {
             string bio = string.Empty;
 
-            foreach (var item in species.FlavorTextEntries)
+            foreach (PokemonSpeciesFlavorTexts item in species.FlavorTextEntries)
             {
                 if (item.Language.Name.Equals(Language) && item.Version.Name.Equals(Version))
                 {

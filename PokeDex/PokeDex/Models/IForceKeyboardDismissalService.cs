@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace PokeDex.Models
+﻿namespace PokeDex.Models
 {
     public interface IForceKeyboardDismissalService
     {

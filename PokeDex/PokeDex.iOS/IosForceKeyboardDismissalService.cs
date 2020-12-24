@@ -1,12 +1,6 @@
-﻿using Foundation;
-
-using PokeDex.Models;
+﻿
 using PokeDex.iOS;
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using PokeDex.Models;
 
 using UIKit;
 
@@ -19,8 +13,8 @@ namespace PokeDex.iOS
         {
             UIApplication.SharedApplication.InvokeOnMainThread(() =>
             {
-                var window = UIApplication.SharedApplication.KeyWindow;
-                var viewController = window.RootViewController;
+                UIWindow window = UIApplication.SharedApplication.KeyWindow;
+                UIViewController viewController = window.RootViewController;
                 while (viewController.PresentedViewController != null)
                 {
                     viewController = viewController.PresentedViewController;

@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
-using System.Threading.Tasks;
-
-using Microcharts;
-
-using SkiaSharp;
+﻿using Microcharts;
 
 using PokeDex.Models;
+using PokeDex.Views;
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Threading.Tasks;
 
 using Xamarin.Forms;
-using PokeDex.Views;
 
 namespace PokeDex.ViewModels
 {
