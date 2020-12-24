@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace PokeDex.Models
 {
@@ -19,13 +17,27 @@ namespace PokeDex.Models
         public int SpecialAttack { get; set; }
         public int SpecialDefence { get; set; }
         public int Speed { get; set; }
-        public string Bio { get; set; }
-        public string imageSource { get; set; }
+        public string FootprintsImageSource { get; set; }
+        public string RemasteredThumbImageSource { get; set; }
+        public string ModernThumbImageSource { get; set; }
+        public string GreenArtImageSource { get; set; }
+        public string BlueArtImageSource { get; set; }
+        public string ModernArtImageSource { get; set; }
 
-        public PokedexModel()
-        {
+        public Species species { get; set; } = new Species();
+    }
 
-        }
-
+    public class Species
+    {
+        public int CaptureRate { get; set; }
+        public string Colour { get; set; }
+        public List<string> EggGroups { get; set; }
+        public string Bio1 { get; set; }
+        public string Bio2 { get; set; }
+        public string Genus { get; set; }
+        public string Generation { get; set; }
+        public string GrowthRate { get; set; }
+        public string Habitat { get; set; }
+        public string Shape { get; set; }
     }
 }

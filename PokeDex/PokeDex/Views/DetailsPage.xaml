@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:PokeDex.ViewModels"
+             xmlns:converters="clr-namespace:PokeDex.ViewModels.Converters"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:chartForms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             x:Class="PokeDex.Views.DetailsPage"
+             ios:Page.UseSafeArea="True"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Resources>
+        <converters:ImageSourceConverter x:Key="ImageSourceConverter"/>
+        <converters:ElementTypeToColourConverter x:Key="ElementalTypeConverter"/>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <ScrollView.GestureRecognizers>
+                <SwipeGestureRecognizer Direction="Right" Command="{Binding CloseDetailsCommand}"/>
+                <SwipeGestureRecognizer Direction="Left" Command="{Binding ShowAltEntryCommand}"/>
+            </ScrollView.GestureRecognizers>
+            
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!--<Grid.GestureRecognizers>
+                    <SwipeGestureRecognizer Direction="Right" Command="{Binding CloseDetail}"/>
+                </Grid.GestureRecognizers>-->
+
+                <Image Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" Margin="20,0,0,0" Source="{Binding Footprints}"/>
+
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" Text="{Binding Name}" FontSize="Title" FontAttributes="Bold"/>
+
+                <Label Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="End" Margin="0,0,20,0" Text="{Binding ID}" FontSize="Title" FontAttributes="Bold"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" Margin="0,0,0,30" Text="{Binding Genus}" FontSize="Caption"/>
+                
+                <Image Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center" Source="{Binding Image}"/>
+                
+                <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" Margin="15,30,15,0" Text="{Binding Bio}" LineBreakMode="WordWrap"/>
+
+                <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" Margin="15,5,15,15" Text="{Binding EggGroup}" FontSize="Caption" FontAttributes="Italic"/>
+
+                <StackLayout Grid.Row="5" Grid.Column="0" Orientation="Vertical" HorizontalOptions="Start" Margin="20,0,0,0" Spacing="5">
+                    <Label Text="{Binding Type_Header}" FontAttributes="Bold" FontSize="Large"/>
+                    <Frame CornerRadius="5" Padding="0" HasShadow="False" WidthRequest="100" Background="{Binding Types[0], Converter={StaticResource ElementalTypeConverter}}">
+                        <Label Text="{Binding Types[0]}" HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" />
+                    </Frame>
+                    <Frame CornerRadius="5" Padding="0" HasShadow="False" WidthRequest="100" Background="{Binding Types[1], Converter={StaticResource ElementalTypeConverter}}">
+                        <Label Text="{Binding Types[1]}" HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" />
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Grid.Row="5" Grid.Column="1" Orientation="Vertical" HorizontalOptions="End" Margin="0,0,20,0" Spacing="5">
+                    <Label Text="{Binding Ability_Header}" HorizontalOptions="End" FontAttributes="Bold" FontSize="Large"/>
+                    <Frame CornerRadius="5" Padding="0" HasShadow="False" WidthRequest="150" Background="Gray">
+                        <Label Text="{Binding Abilities[0]}" HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" />
+                    </Frame>
+                    <Frame CornerRadius="5" Padding="0" HasShadow="False" WidthRequest="150" Background="Gray">
+                        <Label Text="{Binding Abilities[1]}" HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" />
+                    </Frame>
+                </StackLayout>
+
+                <chartForms:ChartView Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,20,0,0" HeightRequest="300" Chart="{Binding StatsChart}"/>
+                
+                <Grid Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Margin="20,20,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Vertical">
+                        <Label Text="{Binding Height_Header}" HorizontalOptions="Center" FontSize="Header" FontAttributes="Bold"/>
+                        <Label Text="{Binding Height}" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Vertical">
+                        <Label Text="{Binding Weight_Header}" HorizontalOptions="Center" FontSize="Header" FontAttributes="Bold"/>
+                        <Label Text="{Binding Weight}" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="0" Grid.Column="2" Orientation="Vertical">
+                        <Label Text="{Binding Shape_Header}" HorizontalOptions="Center" FontSize="Header" FontAttributes="Bold"/>
+                        <Label Text="{Binding Shape}" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Vertical" Margin="0,10,0,0">
+                        <Label Text="{Binding Habitat_Header}" HorizontalOptions="Center" FontSize="Header" FontAttributes="Bold"/>
+                        <Label Text="{Binding Habitat}" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Vertical" Margin="0,10,0,0">
+                        <Label Text="{Binding CaptureR_Header}" HorizontalOptions="Center" FontSize="Header" FontAttributes="Bold"/>
+                        <Label Text="{Binding CaptureRate}" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="1" Grid.Column="2" Orientation="Vertical" Margin="0,10,0,0">
+                        <Label Text="{Binding GrowthR_Header}" HorizontalOptions="Center" FontSize="Header" FontAttributes="Bold"/>
+                        <Label Text="{Binding GrowthRate}" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                </Grid>
+
+                <Label Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center"  Margin="0,20,0,20" Text="{Binding Generation}" FontAttributes="Italic"/>
+
+                <Grid Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" HeightRequest="15"/>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

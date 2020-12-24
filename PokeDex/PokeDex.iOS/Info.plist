@@ -7,10 +7,11 @@
 		<integer>1</integer>
 		<integer>2</integer>
 	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
@@ -22,18 +23,18 @@
 	<key>MinimumOSVersion</key>
 	<string>13.0</string>
 	<key>CFBundleDisplayName</key>
-	<string>PokeDex</string>
+	<string>PokePedia</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.aleuts.Handy505</string>
+	<string>com.aleuts.Handy505.PokeDex</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>0</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
 	<string>PokeDex</string>
 	<key>XSAppIconAssets</key>
-	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<string>Assets.xcassets/AppIcons.appiconset</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1.1</string>
+	<string>1.0.0</string>
 </dict>
 </plist>

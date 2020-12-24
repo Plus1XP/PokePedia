@@ -4,61 +4,76 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels="clr-namespace:PokeDex.ViewModels"
+             xmlns:behaviours="clr-namespace:PokeDex.ViewModels.Behaviours"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              mc:Ignorable="d"
              x:Class="PokeDex.Views.MainPage"
-             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-             ios:Page.UseSafeArea="true">
+             ios:Page.UseSafeArea="True"
+             NavigationPage.HasNavigationBar="False">
 
     <ContentPage.BackgroundColor>
-        <OnPlatform x:TypeArguments="Color" iOS="Red"/>
+        <OnPlatform x:TypeArguments="Color" iOS="White"/>
     </ContentPage.BackgroundColor>
 
     <ContentPage.BindingContext>
         <viewModels:MainPageViewModel/>
     </ContentPage.BindingContext>
 
-    <ContentPage.Resources>
-        <viewModels:ImageSourceConverter x:Key="ImageSourceConverter"/>
-    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
 
-    <StackLayout>
-        <StackLayout Orientation="Horizontal">
-            <Button Text="{Binding Header}" Command="{Binding Cmd}" HorizontalOptions="FillAndExpand" BackgroundColor="Red"/>
-        </StackLayout>
+            <!--<Grid.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding GridFocusedCommand}" NumberOfTapsRequired="1"/>
+            </Grid.GestureRecognizers>-->
 
-        <StackLayout Orientation="Horizontal">
-            <ListView ItemsSource="{Binding pkmList}" SeparatorVisibility="None">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-                                <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
-                                    <Label Text="{Binding ID}" VerticalOptions="Center" Padding="10,0,5,0"/>
-                                    <Image Source="{Binding imageSource, Converter={StaticResource ImageSourceConverter}}"/>
-                                </StackLayout>
+            <Grid Grid.Row="0" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-                                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                                    <Label Text="{Binding Name}" VerticalTextAlignment="Center"/>
-                                </StackLayout>
+                <Image Grid.Column="0" Scale="0.6" Source="{Binding Logo_Header}" HorizontalOptions="Start" BackgroundColor="White">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ShowAboutCommand}" NumberOfTapsRequired="1"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <SearchBar Grid.Column="1" x:Name="PokemonSearchBar" Placeholder="{Binding SearchBoxPlaceHolder}" HorizontalOptions="Start" BackgroundColor="White" IsSpellCheckEnabled="False"
+                           SearchCommand="{Binding PerformSearchCommand}" SearchCommandParameter="{Binding Source={x:Reference PokemonSearchBar}, Path=Text}">
+                    <SearchBar.Behaviors>
+                        <behaviours:TextChangedBehaviour Command="{Binding PerformSearchCommand}" CommandParameter="{Binding Source={x:Reference PokemonSearchBar}, Path=Text}"/>
+                    </SearchBar.Behaviors>
+                    <SearchBar.Keyboard>
+                        <Keyboard x:FactoryMethod="Create">
+                            <x:Arguments>
+                                <KeyboardFlags>None</KeyboardFlags>
+                            </x:Arguments>
+                        </Keyboard>
+                    </SearchBar.Keyboard>
+                </SearchBar>
+            </Grid>
 
-                                <StackLayout Orientation="Horizontal" HorizontalOptions="End" Padding="0,0,10,0">
-                                    <StackLayout Orientation="Vertical" WidthRequest="60">
-                                        <Label Text="{Binding Types[0]}" HorizontalTextAlignment="Start"/>
-                                        <Label Text="{Binding Types[1]}" HorizontalTextAlignment="Start"/>
-                                    </StackLayout>
-                                    <StackLayout Orientation="Vertical" Padding="15,0,0,0" WidthRequest="120">
-                                        <Label Text="{Binding Abilities[0]}" HorizontalTextAlignment="Start"/>
-                                        <Label Text="{Binding Abilities[1]}" HorizontalTextAlignment="Start"/>
-                                    </StackLayout>
-                                </StackLayout>
+            <!--<RefreshView IsEnabled="True" IsRefreshing="{Binding IsRefreshing}" Command="{Binding ClearDataCommand}">-->
+                <ListView Grid.Row="1" Grid.Column="0" x:Name="PokeDexList" Style="{StaticResource Key=PokedexList}" ItemsSource="{Binding pkmList}" IsRefreshing="{Binding IsRefreshing}">
+                    <ListView.Behaviors>
+                        <behaviours:ItemTappedBehaviour Command="{Binding ItemTappedCommand}" CommandParameter="{Binding Source={x:Reference PokeDexList}, Path=SelectedItem}"/>
+                    </ListView.Behaviors>
+                </ListView>
+            <!--</RefreshView>-->
 
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
+            <ListView Grid.Row="1" Grid.Column="0" x:Name="SearchResultsList" Style="{StaticResource Key=PokedexList}" ItemsSource="{Binding SearchSuggestionsCollection}" IsVisible="{Binding IsSearchResultsListVisible}">
+                <ListView.Behaviors>
+                    <behaviours:ItemTappedBehaviour Command="{Binding ItemTappedCommand}" CommandParameter="{Binding Source={x:Reference SearchResultsList}, Path=SelectedItem}"/>
+                </ListView.Behaviors>
             </ListView>
-        </StackLayout>
 
-    </StackLayout>
+        </Grid>
+    </ContentPage.Content>
 </ContentPage>
