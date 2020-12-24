@@ -25,23 +25,23 @@ namespace PokeDex.UnitTests
 
         public void ReturnsCorrectTypeColour_TypeIsString_ReturnsTrue()
         {
-            var elementalColours = new ElementalColours();
-            var list1 = new List<string>() { "fire", "water" };
-            var list2 = new List<string>() { "fire" };
+            ElementalColours elementalColours = new ElementalColours();
+            List<string> list1 = new List<string>() { "fire", "water" };
+            List<string> list2 = new List<string>() { "fire" };
 
-            var result1 = elementalColours.GetElementalColour(list1);
+            System.Tuple<string, string> result1 = elementalColours.GetElementalColour(list1);
 
             Assert.IsTrue(result1.Item1 == elementalColours.typeColour["fire"] && result1.Item2 == elementalColours.typeColour["water"]);
 
-            var result2 = elementalColours.GetElementalColour(list1);
+            System.Tuple<string, string> result2 = elementalColours.GetElementalColour(list1);
 
             Assert.IsTrue(result1.Item1 == elementalColours.typeColour["fire"]);
 
-            var result3 = elementalColours.GetElementalBackgroundColour(list1);
+            System.Tuple<string, string> result3 = elementalColours.GetElementalBackgroundColour(list1);
 
             Assert.IsTrue(result1.Item1 == elementalColours.typeColour["fire"] && result1.Item2 == elementalColours.typeColour["water"]);
 
-            var result4 = elementalColours.GetElementalBackgroundColour(list1);
+            System.Tuple<string, string> result4 = elementalColours.GetElementalBackgroundColour(list1);
 
             Assert.IsTrue(result1.Item1 == elementalColours.typeColour["fire"]);
 
