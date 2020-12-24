@@ -25,8 +25,6 @@ namespace PokeDex.Models
         public string GreenArtImageSource { get; set; }
         public string BlueArtImageSource { get; set; }
         public string ModernArtImageSource { get; set; }
-        public string CriesOriginalSoundSource { get; set; }
-        public string CriesModernSoundSource { get; set; }
 
         public Species species { get; set; } = new Species();
     }

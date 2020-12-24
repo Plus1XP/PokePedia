@@ -42,7 +42,7 @@ namespace PokeDex.ViewModels
         {
             pkmToFind = 151;
 
-            logoPath = $"Images/Original/Logo.png";
+            logoPath = $"Data/Misc/Logo.png";
 
             aboutText = "PokePedia\nv.0.1.1\nhttps://github.com/aleuts";
 
@@ -157,6 +157,7 @@ namespace PokeDex.ViewModels
 
         private async Task LoadPokemonList(int pkmToFind)
         {
+            IsRefreshing = true;
             pkmList = new ObservableCollection<PokedexModel>(await dataManager.LoadPokemonDataList(pkmToFind));
             OnPropertChanged(null);
             IsRefreshing = false;

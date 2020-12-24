@@ -109,15 +109,12 @@ namespace PokeDex.Models
                 pkm.SpecialDefence = pokemon.Stats[4].BaseStat;
                 pkm.Speed = pokemon.Stats[5].BaseStat;
                 //pkm.LowResImageSource = pokemon.Sprites.FrontDefault;
-                pkm.RemasteredThumbImageSource = $"Images/RemasteredThumbs/{pokemon.Id}.png";
-                pkm.ModernThumbImageSource = $"Images/ModernThumbs/{pokemon.Id}.png";
-                pkm.FootprintsImageSource = $"Images/Footprints/{pokemon.Id}.png"; ;
-                pkm.GreenArtImageSource = $"Images/GreenArt/{pokemon.Id}.png";
-                pkm.BlueArtImageSource = $"Images/BlueArt/{pokemon.Id}.png";
-                pkm.ModernArtImageSource = $"Images/ModernArt/{pokemon.Id}.png";
-                pkm.CriesOriginalSoundSource = $"Images/CriesOriginal/{pokemon.Id}.ogg";
-                pkm.CriesModernSoundSource = $"Images/CriesModern/{pokemon.Id}.ogg";
-
+                pkm.RemasteredThumbImageSource = $"Data/RemasteredThumbs/{pokemon.Id}.png";
+                pkm.ModernThumbImageSource = $"Data/ModernThumbs/{pokemon.Id}.png";
+                pkm.FootprintsImageSource = $"Data/Footprints/{pokemon.Id}.png"; ;
+                pkm.GreenArtImageSource = $"Data/GreenArt/{pokemon.Id}.png";
+                pkm.BlueArtImageSource = $"Data/BlueArt/{pokemon.Id}.png";
+                pkm.ModernArtImageSource = $"Data/ModernArt/{pokemon.Id}.png";
                 await GetSpeciesInfo(pkm, pkmID);
             }
             catch (Exception ex)

@@ -22,7 +22,7 @@ namespace PokeDex.Models
             pokedexManager = new PokedexManagerModel();
 
             folderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            dataFileName = "PkmDB.json";
+            dataFileName = "PkmDB";
             fileLocation = Path.Combine(folderPath, dataFileName);
         }
 

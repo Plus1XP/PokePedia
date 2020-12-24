@@ -142,8 +142,6 @@ namespace PokeDex.ViewModels
 
         public string Footprints { get; set; }
 
-        public string Cry { get; private set; }
-
         public Chart StatsChart { get; set; }
 
         private void OnPropertChanged(string property)
@@ -209,7 +207,6 @@ namespace PokeDex.ViewModels
             CaptureRate = pkm.species.CaptureRate;
             Generation = pkm.species.Generation;
             Footprints = pkm.FootprintsImageSource;
-            Cry = pkm.CriesOriginalSoundSource;
 
             MainBio = pkm.species.Bio1;
             AltBio = pkm.species.Bio2;
