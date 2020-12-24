@@ -27,6 +27,8 @@ namespace PokeDex.ViewModels
 
         private string logoPath;
 
+        private string aboutTitle;
+
         private string aboutText;
 
         private bool isRefrshing;
@@ -39,7 +41,9 @@ namespace PokeDex.ViewModels
 
             logoPath = $"Data/Misc/Logo.png";
 
-            aboutText = "PokePedia\nv.0.1.1\nhttps://github.com/aleuts";
+            aboutTitle = $"PokePedia v0.1.1";
+
+            aboutText = "https://github.com/aleuts \n\nRefresh DataBase?";
 
             isRefrshing = false;
 
@@ -61,8 +65,6 @@ namespace PokeDex.ViewModels
 
             GridFocusedCommand = new Command(SetSearchBarFocus);
 
-            ClearDataCommand = new Command(ClearData);
-
             ShowAboutCommand = new Command(async () => await ShowAbout());
 
             RefreshDataBaseCommand.Execute(null);
@@ -73,8 +75,6 @@ namespace PokeDex.ViewModels
         public Command<PokedexModel> ItemTappedCommand { get; }
 
         public Command GridFocusedCommand { get; }
-
-        public Command ClearDataCommand { get; }
 
         public Command ShowAboutCommand { get; }
 
@@ -174,14 +174,19 @@ namespace PokeDex.ViewModels
 
         private async Task ShowAbout()
         {
-            await Application.Current.MainPage.DisplayAlert("About", aboutText, "OK");
+            bool hasExecutedRefresh;
+            hasExecutedRefresh = await Application.Current.MainPage.DisplayAlert(aboutTitle, aboutText, "YES", "NO");
+            ClearData(hasExecutedRefresh);
         }
 
-        private void ClearData()
+        private void ClearData(bool hasExecutedRefresh)
         {
-            IsRefreshing = true;
-            dataManager.RemovePokemonDataFile();
-            RefreshDataBaseCommand.Execute(null);
+            if (hasExecutedRefresh)
+            {
+                IsRefreshing = true;
+                dataManager.RemovePokemonDataFile();
+                RefreshDataBaseCommand.Execute(null);
+            }
         }
     }
 }

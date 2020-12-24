@@ -60,13 +60,13 @@
                 </SearchBar>
             </Grid>
 
-            <RefreshView Grid.Row="1" Grid.Column="0" IsEnabled="True" IsRefreshing="{Binding IsRefreshing}" Command="{Binding ClearDataCommand}">
-                <ListView x:Name="PokeDexList" Style="{StaticResource Key=PokedexList}" ItemsSource="{Binding pkmList}">
+            <!--<RefreshView IsEnabled="True" IsRefreshing="{Binding IsRefreshing}" Command="{Binding ClearDataCommand}">-->
+                <ListView Grid.Row="1" Grid.Column="0" x:Name="PokeDexList" Style="{StaticResource Key=PokedexList}" ItemsSource="{Binding pkmList}" IsRefreshing="{Binding IsRefreshing}">
                     <ListView.Behaviors>
                         <behaviours:ItemTappedBehaviour Command="{Binding ItemTappedCommand}" CommandParameter="{Binding Source={x:Reference PokeDexList}, Path=SelectedItem}"/>
                     </ListView.Behaviors>
                 </ListView>
-            </RefreshView>
+            <!--</RefreshView>-->
 
             <ListView Grid.Row="1" Grid.Column="0" x:Name="SearchResultsList" Style="{StaticResource Key=PokedexList}" ItemsSource="{Binding SearchSuggestionsCollection}" IsVisible="{Binding IsSearchResultsListVisible}">
                 <ListView.Behaviors>
