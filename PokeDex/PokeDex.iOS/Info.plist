@@ -23,7 +23,7 @@
 	<key>MinimumOSVersion</key>
 	<string>13.0</string>
 	<key>CFBundleDisplayName</key>
-	<string>PokeDex</string>
+	<string>PokePedia</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.aleuts.Handy505.PokeDex</string>
 	<key>CFBundleVersion</key>
