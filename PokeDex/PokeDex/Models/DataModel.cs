@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
 
@@ -35,16 +33,6 @@ namespace PokeDex.Models
                 xml.Serialize(writer, data);
             }
         }
-
-        //public object LoadDataFromFile(string file)
-        //{
-        //    return JsonConvert.DeserializeObject<List<PokedexModel>>(File.ReadAllText(file));
-        //}
-
-        //public void SaveDataToFile(string file, object data)
-        //{
-        //    File.WriteAllText(file, JsonConvert.SerializeObject(data));
-        //}
 
         public void DeleteDataFile(string file)
         {
