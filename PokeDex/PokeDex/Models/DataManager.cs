@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -38,7 +39,8 @@ namespace PokeDex.Models
 
         private async Task<List<PokedexModel>> VerifyExistingList(int PkmToFind)
         {
-            List<PokedexModel> data = dataModel.LoadDataFromFile(fileLocation) as List<PokedexModel>;
+            List<PokedexModel> data = dataModel.LoadDataFromXML(fileLocation) as List<PokedexModel>;
+            Debug.Print($"This device is storing data @ {fileLocation}");
 
             if (data.Count.Equals(PkmToFind))
             {
@@ -48,7 +50,7 @@ namespace PokeDex.Models
             {
                 data.Clear();
                 data = await pokedexManager.GetPokemonList(PkmToFind);
-                dataModel.SaveDataToFile(fileLocation, data);
+                dataModel.SaveDataToXML(fileLocation, data);
                 return data;
             }
         }
@@ -56,7 +58,7 @@ namespace PokeDex.Models
         private async Task<List<PokedexModel>> CreateNewPokemonList(int PkmToFind)
         {
             List<PokedexModel> data = await pokedexManager.GetPokemonList(PkmToFind);
-            dataModel.SaveDataToFile(fileLocation, data);
+            dataModel.SaveDataToXML(fileLocation, data);
             return data;
         }
 
