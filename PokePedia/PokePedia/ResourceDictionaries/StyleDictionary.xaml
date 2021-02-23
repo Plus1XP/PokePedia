@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="PokePedia.ResourceDictionaries.StyleDictionary"
+                    xmlns:converters="clr-namespace:PokePedia.ViewModels.Converters">
+
+    <converters:ImageSourceConverter x:Key="ImageSourceConverter"/>
+    <converters:ElementTypeToColourConverter x:Key="ElementalTypeConverter"/>
+
+    <Style TargetType="ListView" x:Key="PokedexList">
+        <Setter Property="SeparatorVisibility" Value="None"/>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Margin="10,0,10,0" ColumnSpacing="20">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding ID}"/>
+
+                            <Image Grid.Row="0" Grid.Column="1" Source="{Binding RemasteredThumbImageSource}" Aspect="Fill" HeightRequest="45" WidthRequest="45"/>
+
+                            <Label Grid.Row="0" Grid.Column="2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Header" Text="{Binding Name}"/>
+
+                            <StackLayout Grid.Row="0" Grid.Column="3" Orientation="Horizontal" VerticalOptions="Center" Spacing="5">
+                                <Frame CornerRadius="5" Padding="0" HasShadow="False" WidthRequest="80" Background="{Binding Types[0], Converter={StaticResource ElementalTypeConverter}}">
+                                    <Label HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" Text="{Binding Types[0]}"/>
+                                </Frame>
+                                <Frame CornerRadius="5" Padding="0" HasShadow="False" WidthRequest="80" Background="{Binding Types[1], Converter={StaticResource ElementalTypeConverter}}">
+                                    <Label HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" Text="{Binding Types[1]}"/>
+                                </Frame>
+                            </StackLayout>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
