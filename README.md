@@ -1,5 +1,5 @@
 # PokeDex
-An interactive Pokedex for Mobile Devices.
+An interactive Pokedex for Mobile Devices using Xamarin Forms.
 
 **Currently includes maximum nostalgia for Gen 1 including original Ken Sugimori artwork**
 
@@ -43,4 +43,4 @@ Thank you to PokeAPI for providing the data used for this pokedex.
 
 ![](Images/16.png) ![](Images/17.png)
 
-![](Images/17.png) ![](Images/18.png)
+![](Images/18.png) ![](Images/19.png)
