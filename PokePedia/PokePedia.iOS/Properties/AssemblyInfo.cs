@@ -7,9 +7,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("PokeDex.iOS")]
 [assembly: AssemblyDescription("An interactive Pokedex for Mobile Devices")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("https://github.com/aleuts")]
+[assembly: AssemblyCompany("https://github.com/Plus1XP")]
 [assembly: AssemblyProduct("PokeDex.iOS")]
-[assembly: AssemblyCopyright("Copyright ©  2014")]
+[assembly: AssemblyCopyright("Copyright ©  2014 Plus1XP")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -4,13 +4,14 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
     <Version>1.0.1</Version>
-    <Company>https://github.com/aleuts</Company>
+    <Company>https://github.com/Plus1XP</Company>
     <FileVersion>0.1.0.1</FileVersion>
     <Description>An interactive Pokedex for Mobile Devices</Description>
-    <Authors>aleuts</Authors>
+    <Authors>Plus1XP</Authors>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <PackageId>PokePedia</PackageId>
     <Product>PokePedia</Product>
+    <Copyright>Copyright (c) Plus1XP</Copyright>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
